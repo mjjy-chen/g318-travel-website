@@ -1,4 +1,4 @@
-/* Base styles */
+/* Base styles with enhanced design */
 * {
     margin: 0;
     padding: 0;
@@ -9,171 +9,437 @@ body {
     font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
-    line-height: 1.6;
+    line-height: 1.7;
+    background-color: var(--color-bg-light);
 }
 
+/* Container class for consistent width */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header styles */
 header {
-    text-align: center;
-    padding: 2rem 1rem;
-    background-color: var(--color-bg-primary);
+    background: linear-gradient(135deg, #fff5f7 0%, #ffe4e9 100%);
+    padding: 3rem 0 2rem;
     border-bottom: 1px solid var(--color-disabled);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-mountain), var(--color-lake), var(--color-culture), var(--color-road));
 }
 
 header h1 {
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 0.5rem;
+    background: linear-gradient(to right, var(--color-mountain), var(--color-lake), var(--color-culture), var(--color-road));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 header p {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     color: var(--color-text-secondary);
-}
-
-main {
-    max-width: 1200px;
+    max-width: 600px;
     margin: 0 auto;
-    padding: 2rem;
 }
 
-footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    color: var(--color-text-secondary);
-    font-size: 0.875rem;
-    border-top: 1px solid var(--color-disabled);
+/* Main content area */
+main {
+    background-color: var(--color-bg-primary);
 }
+
+/* Section title styles */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--color-text-primary);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-mountain), var(--color-lake), var(--color-culture), var(--color-road));
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
 /* Hero section */
 .hero {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffe4e9 100%);
+    padding: 5rem 0 4rem;
     text-align: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,56,92,0.1) 0%, transparent 70%);
+    transform: rotate(45deg);
 }
 
 .hero h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
     color: var(--color-text-primary);
+    position: relative;
+    z-index: 2;
 }
 
 .hero p {
     font-size: 1.25rem;
-    margin-bottom: 2rem;
     color: var(--color-text-secondary);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+    position: relative;
+    z-index: 2;
 }
 
-/* Features section */
-.features {
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--color-mountain), var(--color-accent));
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(to right, var(--color-accent), var(--color-mountain));
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: var(--color-bg-card);
+    color: var(--color-text-primary);
+    border: 2px solid var(--color-disabled);
+}
+
+.btn-secondary:hover {
+    background: var(--color-accent);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:active {
+    transform: translateY(-1px);
+}
+
+/* Route highlights section */
+.route-highlights {
+    padding: 4rem 0;
+    background-color: var(--color-bg-light);
+}
+
+.highlights-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin: 3rem 0;
-    padding: 0 1rem;
 }
 
-.feature-card {
-    background: var(--color-bg-primary);
-    border-radius: 8px;
-    padding: 2rem;
+.highlight-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
     text-align: center;
     box-shadow: var(--shadow-card);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
-.feature-card:hover {
-    transform: translateY(-4px);
+.highlight-card:hover {
+    transform: translateY(-8px);
     box-shadow: var(--shadow-hover);
+    border-color: rgba(0,0,0,0.1);
 }
 
-.feature-card h3 {
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-mountain), var(--color-lake), var(--color-culture), var(--color-road));
+}
+
+.highlight-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.highlight-card h3 {
     font-size: 1.5rem;
+    font-weight: 600;
     margin-bottom: 1rem;
     color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
-.feature-card p {
-    font-size: 1rem;
+.highlight-card p {
+    font-size: 1.1rem;
     color: var(--color-text-secondary);
-    line-height: 1.6;
+    line-height: 1.7;
+}
+
+/* Travel essentials section */
+.travel-essentials {
+    padding: 4rem 0;
+    background-color: var(--color-bg-primary);
+}
+
+.essentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.essential-item {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.essential-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(0,0,0,0.1);
+}
+
+.essential-item h3 {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.essential-item p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
 }
 
 /* Call to action section */
 .call-to-action {
+    background: linear-gradient(135deg, #ffe4e9 0%, #fff5f7 100%);
+    padding: 5rem 0;
     text-align: center;
-    padding: 4rem 2rem;
-    background-color: var(--color-bg-primary);
-    margin: 3rem 0;
-    border-top: 1px solid var(--color-disabled);
-    border-bottom: 1px solid var(--color-disabled);
+    position: relative;
+    overflow: hidden;
+}
+
+.call-to-action::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,56,92,0.1) 0%, transparent 70%);
+    transform: rotate(45deg);
 }
 
 .call-to-action h2 {
-    font-size: 1.75rem;
+    font-size: 2rem;
+    font-weight: 700;
     margin-bottom: 1.5rem;
     color: var(--color-text-primary);
+    position: relative;
+    z-index: 2;
 }
 
 .call-to-action p {
-    font-size: 1.125rem;
-    margin-bottom: 2rem;
+    font-size: 1.25rem;
     color: var(--color-text-secondary);
     max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+    position: relative;
+    z-index: 2;
 }
 
-/* Buttons */
-.btn-primary, .btn-secondary {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
+/* Footer styles */
+footer {
+    background-color: var(--color-bg-primary);
+    border-top: 1px solid var(--color-disabled);
+    padding: 3rem 0 2rem;
+    text-align: center;
 }
 
-.btn-primary {
-    background-color: var(--color-accent);
-    color: white;
+footer p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
 }
 
-.btn-primary:hover {
-    background-color: #e6344f;
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background-color: var(--color-disabled);
-    color: var(--color-text-primary);
-}
-
-.btn-secondary:hover {
-    background-color: rgba(0,0,0,0.1);
-    transform: translateY(-2px);
+footer p:last-child {
+    font-size: 0.875rem;
+    color: rgba(106,106,106,0.7);
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+    .container {
+        width: 92%;
+        padding: 0 1.5rem;
+    }
+    
+    header h1 {
+        font-size: 2.25rem;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .container {
+        width: 94%;
+        padding: 0 1rem;
+    }
+    
+    header {
+        padding: 2.5rem 0 1.5rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header p {
+        font-size: 1.125rem;
+    }
+    
     .hero {
-        padding: 3rem 1.5rem;
+        padding: 4rem 0 3rem;
     }
     
     .hero h2 {
         font-size: 1.75rem;
     }
     
-    .features {
+    .hero p {
+        font-size: 1.125rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .highlights-grid,
+    .essentials-grid {
         grid-template-columns: 1fr;
     }
     
+    .highlight-card,
+    .essential-item {
+        padding: 2rem;
+    }
+    
     .call-to-action {
-        padding: 3rem 1.5rem;
+        padding: 4rem 0;
+    }
+    
+    .call-to-action h2 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 96%;
+    }
+    
+    header h1 {
+        font-size: 1.75rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.25rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    footer p {
+        font-size: 0.875rem;
+    }
+    
+    footer p:last-child {
+        font-size: 0.75rem;
     }
 }
