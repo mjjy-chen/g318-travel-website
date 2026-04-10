@@ -22,7 +22,7 @@
             <div class="container">
                 <h2>川藏线南线经典路线</h2>
                 <p>全程约2140公里，沿途雪山、草原、湖泊、森林应有尽有，是自驾爱好者的梦幻之路。</p>
-                <a href="#route-details" class="btn-primary">查看详细路线</a>
+                <button class="btn-primary" id="route-btn">查看详细路线</button>
             </div>
         </section>
         
@@ -55,7 +55,7 @@
             </div>
         </section>
         
-        --Travel Essentials-->
+        <!-- Travel Essentials -->
         <section class="travel-essentials">
             <div class="container">
                 <h2 class="section-title">旅行必备</h2>
@@ -80,12 +80,33 @@
             </div>
         </section>
         
+        <!-- Photo Gallery Section -->
+        <section class="photo-gallery" id="route-details">
+            <div class="container">
+                <h2 class="section-title">沿途风景</h2>
+                <p class="gallery-description">点击按钮查看不同类型的沿途风景照片</p>
+                <div class="gallery-controls">
+                    <button class="btn-photo" data-type="scenery">风景照片</button>
+                    <button class="btn-photo" data-type="accommodation">住宿民宿</button>
+                    <button class="btn-photo" data-type="food">地方美食</button>
+                    <button class="btn-photo" data-type="culture">民俗文化</button>
+                </div>
+                <div class="photo-display">
+                    <div class="photo-placeholder">
+                        <div class="placeholder-icon">🖼️</div>
+                        <h3>点击上面的按钮查看照片</h3>
+                        <p>这里将展示精选的沿途风景、住宿、美食和民俗照片</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <!-- Call to Action -->
         <section class="call-to-action">
             <div class="container">
                 <h2>开始您的318自驾之旅</h2>
                 <p>我们提供详细的路线规划、住宿推荐和旅行攻略，让您的旅程更加安心难忘。</p>
-                <a href="#planning" class="btn-secondary">免费获取旅行指南</a>
+                <button class="btn-secondary" id="guide-btn">免费获取旅行指南</button>
             </div>
         </section>
     </main>

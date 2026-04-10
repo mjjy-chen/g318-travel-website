@@ -138,6 +138,7 @@ main {
     overflow: hidden;
 }
 
+/* Enhanced button styles with active states */
 .btn-primary {
     background: linear-gradient(to right, var(--color-mountain), var(--color-accent));
     color: white;
@@ -152,6 +153,7 @@ main {
 
 .btn-primary:active {
     transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary {
@@ -168,7 +170,44 @@ main {
 }
 
 .btn-secondary:active {
+    background: #e6344f;
+    color: white;
     transform: translateY(-1px);
+}
+
+/* Photo gallery buttons */
+.btn-photo {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--color-disabled);
+    cursor: pointer;
+    font-size: 0.95rem;
+    margin: 0.5rem;
+    background: var(--color-bg-card);
+    color: var(--color-text-primary);
+}
+
+.btn-photo:hover {
+    background: var(--color-accent);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-photo:active {
+    background: #e6344f;
+    color: white;
+    transform: translateY(0);
+}
+
+.btn-photo.active {
+    background: var(--color-accent);
+    color: white;
+    box-shadow: var(--shadow-lg);
 }
 
 /* Route highlights section */
@@ -278,6 +317,72 @@ main {
     line-height: 1.7;
 }
 
+/* Photo gallery section */
+.photo-gallery {
+    padding: 4rem 0;
+    background-color: var(--color-bg-light);
+}
+
+.gallery-description {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-text-secondary);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+}
+
+.gallery-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.photo-display {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-card);
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.photo-placeholder {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.photo-placeholder:hover {
+    opacity: 1;
+}
+
+.placeholder-icon {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.photo-placeholder h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+}
+
+.photo-placeholder p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
 /* Call to action section */
 .call-to-action {
     background: linear-gradient(135deg, #ffe4e9 0%, #fff5f7 100%);
@@ -354,6 +459,15 @@ footer p:last-child {
     .section-title {
         font-size: 1.75rem;
     }
+    
+    .gallery-controls {
+        gap: 0.25rem;
+    }
+    
+    .btn-photo {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -400,6 +514,21 @@ footer p:last-child {
         padding: 2rem;
     }
     
+    .gallery-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-photo {
+        width: 100%;
+        max-width: 200px;
+        margin: 0.25rem auto;
+    }
+    
+    .photo-display {
+        min-height: 250px;
+    }
+    
     .call-to-action {
         padding: 4rem 0;
     }
@@ -433,6 +562,18 @@ footer p:last-child {
     .btn-primary, .btn-secondary {
         padding: 0.75rem 1.5rem;
         font-size: 0.9rem;
+    }
+    
+    .gallery-description {
+        font-size: 1rem;
+    }
+    
+    .photo-placeholder h3 {
+        font-size: 1.5rem;
+    }
+    
+    .photo-placeholder p {
+        font-size: 1rem;
     }
     
     footer p {
