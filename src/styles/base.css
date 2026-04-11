@@ -542,45 +542,128 @@ footer p:last-child {
     .container {
         width: 96%;
     }
-    
+
     header h1 {
         font-size: 1.75rem;
     }
-    
+
     header p {
         font-size: 1rem;
     }
-    
+
     .hero h2 {
         font-size: 1.5rem;
     }
-    
+
     .section-title {
         font-size: 1.25rem;
     }
-    
+
     .btn-primary, .btn-secondary {
         padding: 0.75rem 1.5rem;
         font-size: 0.9rem;
     }
-    
+
     .gallery-description {
         font-size: 1rem;
     }
-    
+
     .photo-placeholder h3 {
         font-size: 1.5rem;
     }
-    
+
     .photo-placeholder p {
         font-size: 1rem;
     }
-    
+
     footer p {
         font-size: 0.875rem;
     }
-    
+
     footer p:last-child {
         font-size: 0.75rem;
     }
+}
+
+/* Styles for the dynamic content added via JS */
+.scenery-grid, .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.scenery-item, .food-item, .accommodation-item, .culture-item {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.scenery-item:hover, .food-item:hover, .accommodation-item:hover, .culture-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(0,0,0,0.1);
+}
+
+.scenery-item h4, .food-item h4, .accommodation-item h4, .culture-item h4 {
+    color: var(--color-text-primary);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.scenery-item p, .food-item p, .accommodation-item p, .culture-item p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.scenery-item .tip, .food-item .tip, .accommodation-item .tip, .culture-item .tip {
+    font-size: 0.9rem;
+    color: var(--color-text-primary);
+    font-weight: 500;
+    background: rgba(var(--color-mountain-rgb), 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.accommodation-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.accommodation-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.accommodation-item h4 {
+    flex-shrink: 0;
+}
+
+.accommodation-item .rating {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.culture-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Define RGB variables for the accent color usage */
+:root {
+    --color-mountain-rgb: 139, 92, 246; /* #8b5cf6 */
+    --color-lake-rgb: 6, 182, 212; /* #06b6d4 */
+    --color-culture-rgb: 249, 115, 22; /* #f97316 */
+    --color-road-rgb: 16, 185, 129; /* #10b981 */
 }

@@ -88,47 +88,158 @@ function updatePhotoDisplay(type, container) {
     // Clear current content
     container.innerHTML = '';
     
-    // Create placeholder based on type
-    const placeholder = document.createElement('div');
-    placeholder.className = 'photo-placeholder';
+    // Create container for content
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'photo-content';
     
-    let icon, title, description;
+    let title, itemsHtml = '';
     
     switch(type) {
         case 'scenery':
-            icon = '🏔️';
-            title = '沿途风景照片';
-            description = '这里将展示川藏线沿途的壮丽风景，包括雪山、湖泊、草原和森林等自然景观。';
+            title = '沿途风景';
+            itemsHtml = `
+                <div class="scenery-grid">
+                    <div class="scenery-item">
+                        <h4>雅拉雪山</h4>
+                        <p>海拔7294米，终年雪山，是川藏线最著名的雪山景观之一。最佳观赏时间：4-6月，上午时分云雾较少。</p>
+                        <p class="tip">小贴士：可在察瓦龙镇观景台俯瞰全貌，注意防晒和保暖。</p>
+                    </div>
+                    <div class="scenery-item">
+                        <h4>然乌湖</h4>
+                        <p>被誉为“人间仙湖”，湖水澄澈如镜，倒映着雪山和森林。最佳旅游季节：5-10月。</p>
+                        <p class="tip">小贴士：湖边有藏民家访体验，可尝试奶酪和青稞酒。</p>
+                    </div>
+                    <div class="scenery-item">
+                        <h4>巴松措</h4>
+                        <p>“神湖”之美，湖光山色相映成趣，四季景色各异。春季杜鹃花开尤为壮观。</p>
+                        <p class="tip">小贴士：环湖步行约2小时，沿途有多个观景点可拍摄倒影。</p>
+                    </div>
+                    <div class="scenery-item">
+                        <h4>72拐</h4>
+                        <p>海拔4000多米的蜿蜒山路，共有72个弯道，是川藏线上最具挑战的路段之一。</p>
+                        <p class="tip">小贴士：上坡时使用低挡，下坡时靠边行驶，注意迎车。</p>
+                    </div>
+                    <div class="scenery-item">
+                        <h4>米堆冰川</h4>
+                        <p>中国最低海拔现代冰川，冰川下方有原始森林，形成独特的“冰川森林”景观。</p>
+                        <p class="tip">小贴士：建议上午前往，下午易有雾气影响能见度。</p>
+                    </div>
+                </div>
+            `;
             break;
         case 'accommodation':
-            icon = '🏨';
-            title = '住宿民宿照片';
-            description = '这里将展示沿途特色客栈、酒店和民宿的环境和设施。';
+            title = '住宿推荐';
+            itemsHtml = `
+                <div class="accommodation-list">
+                    <div class="accommodation-item">
+                        <h4>林芝希尔顿逸林酒店</h4>
+                        <p>⭐⭐⭐⭐⭐ | 林芝市区 | 约¥400-600/晚</p>
+                        <p>提供氧气袋和高原反应药品，早餐包含藏式馕和甜茶。</p>
+                        <p class="tip">适合：首次进藏需要缓冲的游客</p>
+                    </div>
+                    <div class="accommodation-item">
+                        <h4>波密古乡格萨尔王庄园</h4>
+                        <p>⭐⭐⭐⭐ | 波密县 | 约¥250-350/晚</p>
+                        <p>藏式花园小院，房间带藏式装修，可体验藏家烤火。</p>
+                        <p class="tip">适合：想体验藏传民宿文化的旅行者</p>
+                    </div>
+                    <div class="accommodation-item">
+                        <h4>昌都香巴拉宾馆</h4>
+                        <p>⭐⭐⭐ | 昌都县 | 约¥150-250/晚</p>
+                        <p>条件基本但干净整洁，老板热情提供旅行建议和当地信息。</p>
+                        <p class="tip">适合：预算有限的背包客和自驾车友</p>
+                    </div>
+                    <div class="accommodation-item">
+                        <h4>左贡客栈·旺姆家访</h4>
+                        <p>⭐⭐⭐⭐ | 左贡县 | 约¥180-280/晚（含早晚餐）</p>
+                        <p>藏式木结构房屋，可参加家庭烤火和酥油茶制作。</p>
+                        <p class="tip">适合：想深度体验藏家生活的文化爱好者</p>
+                    </div>
+                    <div class="accommodation-item">
+                        <h4>邦达草原旅社</h4>
+                        <p>⭐⭐⭐ | 邦达草原 | 约¥120-200/晚</p>
+                        <p>草原上的简易旅社，夜晚可观星，清晨看草原牛羊。</p>
+                        <p class="tip">适合：喜欢草原夜色和宁静的旅行者</p>
+                    </div>
+                </div>
+            `;
             break;
         case 'food':
-            icon = '🍜';
-            title = '地方美食照片';
-            description = '这里将展示藏餐、川菜和途经各地的特色小吃和美食。';
+            title = '地方美食';
+            itemsHtml = `
+                <div class="food-grid">
+                    <div class="food-item">
+                        <h4>酥油茶</h4>
+                        <p>藏家日常饮品，由茶、酥油和盐搅拌而成，高热量易于耐寒。</p>
+                        <p class="tip">品尝建议：刚端上来时热饮，不要一次喝太多以免不适。</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>青稞酒</h4>
+                        <p>高原特色酒精饮料，度数较低（20%-30%），味道甘甜略带酸味。</p>
+                        <p class="tip">饮用注意：高原地区酒精易上头，控制量并多喝水。</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>藏式羊肉火锅</h4>
+                        <p>清汤底煮羊肉片，配以藏式蘸料（香菜、蒜泥、辣椒油等）。</p>
+                        <p class="tip">最佳餐馆：林芝的“桃花庄园”、波密的“八一食堂”。</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>石锅鸡（巴松措特色）</h4>
+                        <p>用当地石锅慢炖的鸡肉汤，加入木耳、香菇和 Highland barley。</p>
+                        <p class="tip">必须尝试：巴松措湖边的石锅鸡馆，鱼汤同样值得一试。</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>雅江鱼</h4>
+                        <p>雅江河谷特产，肉质鲜嫩，多以清蒸或红烧方式烹饪。</p>
+                        <p class="tip">季节性强：4-6月为最佳时期，之后可能因禁渔而难以买到。</p>
+                    </div>
+                    <div class="food-item">
+                        <h4>高原牦牛肉干</h4>
+                        <p>风干牦牛肉，嚼劲十足，是途中补给的好选择。</p>
+                        <p class="tip">选购建议：颜色深红不发黑，闻起来有肉香无异味。</p>
+                    </div>
+                </div>
+            `;
             break;
         case 'culture':
-            icon = '🎭';
-            title = '民俗文化照片';
-            description = '这里将展示藏传佛教寺庙、节日庆典和当地民俗文化活动。';
+            title = '民俗文化';
+            itemsHtml = `
+                <div class="culture-list">
+                    <div class="culture-item">
+                        <h4>藏传佛教寺庙</h4>
+                        <p>沿途可见诸多寺庙，如波密的嘎托寺、昌都的觉东寺等。</p>
+                        <p class="tip">参观礼仪：逆时针转经轮、不要触摸佛像、保持安静。</p>
+                    </div>
+                    <div class="culture-item">
+                        <h4>雪顿节（若遇同年份）</h4>
+                        <p>藏历六月二十九日开始的节日，以晒佛像和吃酸奶为主要内容。</p>
+                        <p class="tip">时间参考：通常在公历6-7月之间，具体日期需查看当年中藏历。</p>
+                    </div>
+                    <div class="culture-item">
+                        <h4>藏式婚礼 customs</h4>
+                        <p>若遇婚礼迎亲队伍，会看到新娘戴着凤冠霞帔，骑着装饰的马。</p>
+                        <p class="tip">尊重观看：保持距离不要围观太近，可拍远景但不建议近距离拍摄新娘。</p>
+                    </div>
+                    <div class="culture-item">
+                        <h4>酥油花制作</h4>
+                        <p>冬季藏民用酥油和矿物质颜料塑造成各种佛像和花卉。</p>
+                        <p class="tip">欣赏地点：部分寺庙冬季会展酥油花，夏季较少可见。</p>
+                    </div>
+                    <div class="culture-item">
+                        <h4>藏族歌舞表演</h4>
+                        <p>许多餐厅和文化园会有晚间的藏族歌舞表演。</p>
+                        <p class="tip">体验建议：林芝和波密的一些客栈提供晚餐加表演套餐。</p>
+                    </div>
+                </div>
+            `;
             break;
         default:
-            icon = '🖼️';
             title = '照片展览';
-            description = '点击上面的按钮查看不同类型的照片。';
+            itemsHtml = '<p>点击上面的按钮查看不同类型的照片。</p>';
     }
     
-    placeholder.innerHTML = `
-        <div class="placeholder-icon">${icon}</div>
-        <h3>${title}</h3>
-        <p>${description}</p>
-        <p class="photo-note">* 实际网站将在此处展示高质量的实拍照片</p>
-    `;
-    
-    container.appendChild(placeholder);
+    contentDiv.innerHTML = `<h3>${title}</h3>${itemsHtml}`;
+    container.appendChild(contentDiv);
 }
 
 function initSmoothScrolling() {
