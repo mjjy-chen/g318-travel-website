@@ -46,6 +46,44 @@ function initButtonInteractions() {
             showNotification('旅行指南获取功能正在开发中...', 'info');
         });
     }
+    
+    // Route planner buttons
+    initRoutePlanner();
+}
+
+function initRoutePlanner() {
+    const plannerButtons = document.querySelectorAll('.btn-planner');
+    const routeDisplay = document.querySelector('.route-display');
+    
+    if (plannerButtons.length > 0 && routeDisplay) {
+        plannerButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                plannerButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Get the route type
+                const days = this.getAttribute('data-days');
+                
+                // Update route display
+                updateRouteDisplay(days, routeDisplay);
+                
+                // Add visual feedback
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+        
+        // Set first button as active by default
+        if (plannerButtons[0]) {
+            plannerButtons[0].classList.add('active');
+            updateRouteDisplay('8', routeDisplay);
+        }
+    }
 }
 
 function initPhotoGallery() {
@@ -236,6 +274,207 @@ function updatePhotoDisplay(type, container) {
         default:
             title = '照片展览';
             itemsHtml = '<p>点击上面的按钮查看不同类型的照片。</p>';
+    }
+    
+    contentDiv.innerHTML = `<h3>${title}</h3>${itemsHtml}`;
+    container.appendChild(contentDiv);
+}
+
+function updateRouteDisplay(days, container) {
+    // Clear current content
+    container.innerHTML = '';
+    
+    // Create container for content
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'route-content';
+    
+    let title, itemsHtml = '';
+    
+    switch(days) {
+        case '8':
+            title = '8天经典路线';
+            itemsHtml = `
+                <div class="route-grid">
+                    <div class="route-day">
+                        <h4>第1天：成都 → 川主寺 → 岷山口</h4>
+                        <p>行程：约220公里，沿途观看岷山雪山，下午到达川主寺镇。</p>
+                        <p class="tip">住宿建议：川主寺镇客栈，体验藏家小院。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第2天：川主寺 → 丹巴县城</h4>
+                        <p>行程：约180公里，途经四姑娘山观景点， afternoon arrive at Danba.</p>
+                        <p class="tip">必看：丹巴甲居藏寨，全国著名的藏寨群落。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第3天：丹巴 → 新都桥</h4>
+                        <p>行程：约140公里，途经墨石公园和雅江河谷，到达“摄影师的天堂”新都桥。</p>
+                        <p class="tip">推荐：在新都桥镇拍摄夕阳下的圣光山和农家小院。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第4天：新都桥 → 泸定 → 岚皋山</h4>
+                        <p>行程：约190公里，过泸定桥后翻越岚皋山（4298米），进入康ding地区。</p>
+                        <p class="tip">注意：岚皋山是川藏线上的第一座高山垭口，做好防晒保暖。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第5天：康定 → 新路海 → 札达</h4>
+                        <p>行程：约210公里，穿越折多山（4298米）和札拉山（4500多米），到达札达县。</p>
+                        <p class="tip">景观：沿途可见雪山、峡谷和高原草原交替的壮丽景色。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第6天：札达 → 然乌湖 → 波密</h4>
+                        <p>行程：约180公里，途经东达山口（4700米）后下山到然乌湖，继续前往波密。</p>
+                        <p class="tip">重点：然乌湖被誉为“人间仙湖”，湖水澄澈如镜。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第7天：波密 → 八一 → 林芝</h4>
+                        <p>行程：约140公里，沿尼洋河谷前行，观察森林覆盖率明显增加。</p>
+                        <p class="tip": "体验：林芝被称为‘江南的西藏’，空气湿度大，植被丰富。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第8天：林芝 → 拉萨</h4>
+                        <p>行程：约400公里（可选择飞缩时间），途经雅鲁藏布江大峡谷观景点。</p>
+                        <p class="tip": "终点：抵达圣城拉萨，结束川南段旅程，可继续北进或返回。</p>
+                    </div>
+                </div>
+            `;
+            break;
+        case '10':
+            title = '10天深度路线';
+            itemsHtml = `
+                <div class="route-grid">
+                    <div class="route-day">
+                        <h4>第1天：成都 → 汶川 → 松潘</h4>
+                        <p>行程：约160公里，途经汶川特殊教育学校纪念馆，到达松潘古城。</p>
+                        <p class="tip">文化：松潘是古代茶马古道重镇，保存有明代城墙。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第2天：松潘 → 黄龙 → 川主寺</h4>
+                        <p>行程：约200公里，早上游览黄龙风景区（世界自然遗产），下午至川主寺。</p>
+                        <p class="tip">安排：黄龙建议早上去，下午云雾少景色佳。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第3天：川主寺 → 甲居藏寨 → 鲁甸</h4>
+                        <p>行程：约150公里，上午游览丹巴甲居藏寨，下午前往鲁甸县。</p>
+                        <p class="tip">深度：在甲居藏寨可安排藏家访问和酥油茶体验。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第4天：鲁甸 → 新都桥 → 理塘</h4>
+                        <p>行程：约220公里，途经墨石公园、雅江河谷和兔儿山（4576米）。</p>
+                        <p class="tip">过渡：理塘是藏区重要交通站点，海拔4014米。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第5天：理塘 → 稻城 → 亚丁</h4>
+                        <p>行程：约150公里，途经雪山草原，下午到达稻城县，准备次日游亚丁。</p>
+                        <p class="tip">准备：亚丁景区需提前购票，建议租电动车环游。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第6天：亚丁景区游览日</h4>
+                        <p>全日游览亚丁自然保护区：牛奶海、五色海、珍珠海和仙乃日神山。</p>
+                        <p class="tip">体验：建议雇佣向导，全程约8小时徒步或电动车。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第7天：稻城 → 香格里拉镇 → 藏王树</h4>
+                        <p>行程：约180公里，经央迈隆山口（4700多米）到达香格里拉镇。</p>
+                        <p class="tip">景观：途经梅里雪山 الوطنية公园观景点，远眺卡瓦格博峰。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第8天：香格里拉镇 → 芒康 → 左贡</h4>
+                        <p>行程：约220公里，途经澜沧江（ Mekong River）大峡谷。</p>
+                        <p class="tip": "奇观：澜沧江峡谷深度超过千米，被称为‘东方大峡谷’。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第9天：左贡 → 邦达草原 → 然乌湖</h4>
+                        <p>行程：约200公里，早上经左贡县后穿越邦达草原，下午到然乌湖。</p>
+                        <p class="tip">体验：邦达草原是典型的高原草原，可骑马或观赏牦牛群。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第10天：然乌湖 → 波密 → 八一 → 林芝</h4>
+                        <p>行程：约180公里，早上欣赏然乌湖晨雾，下午返回林芝准备返程。</p>
+                        <p class="tip": "返程：林芝有机场可飞返成都，亦可继续原路返回。</p>
+                    </div>
+                </div>
+            `;
+            break;
+        case '15':
+            title = '15天全程路线';
+            itemsHtml = `
+                <div class="route-grid">
+                    <div class="route-day">
+                        <h4>第1-2天：成都 → 喇叭沟门 → 鲁甸（经四姑娘山）</h4>
+                        <p>行程：约300公里，深度游览四姑娘山景区（爬二峰或观光大巴）后经卧龙至鲁甸。</p>
+                        <p class="tip">安排：建议在四姑娘山住一晚，第二天早上继续西行。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第3天：鲁甸 → 新都桥 → 理塘</h4>
+                        <p>行程：约220公里，途经雅江河谷观光和兔儿山翻越。</p>
+                        <p class="tip">过渡：理塘海拔4014米，是重要的藏区聚集地。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第4天：理塘 → 稻城 → 亚丁（全日游览）</h4>
+                        <p>行程：约150公里到稻城，第二天全日游览亚丁自然保护区。</p>
+                        <p class="tip">深度：亚丁建议住两天，充分体验“最后香格里拉”的自然之美。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第5天：亚丁 → 香格里拉镇 → 盐井</h4>
+                        <p>行程：约200公里，途经央迈隆山口和镇巴古猫桥，下午到盐井乡。</p>
+                        <p class="tip">文化：盐井乡保存有古老的盐井和红军长征纪念地。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第6天：盐井 → 芒康 → 左贡</h4>
+                        <p>行程：约180公里，途经京昆高原和丁青草原，下午到左贡县。</p>
+                        <p class="tip">准备：左贡后道路条件变好，但海拔仍在4000米以上。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第7天：左贡 → 邦达草原 → 然乌湖 → 波密</h4>
+                        <p>行程：约220公里，早上经左贡后穿越邦达草原，下午到然乌湖继续至波密。</p>
+                        <p class="tip">景观：然乌湖四周雪山环抱，是摄影爱好者的天堂。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第8天：波密 → 八一 → 林芝（林芝桃花沟）</h4>
+                        <p>行程：约140公里，早上游览林芝桃花沟（3-4月最佳），下午自由活动。</p>
+                        <p class="tip">体验：林芝除了桃花，还有雁鸣湖和雅鲁藏布江大峡谷观景点。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第9天：林芝 → 邦林 → 珠峰大本营方向（观景）</h4>
+                        <p>行程：约200公里，途经八一镇后前往珠峰大本营方向（可观海拔5200米观景点）。</p>
+                        <p class="tip">观看：若天气晴好，可远眺珠峰主峰（8848米），注意防晒和高原反应。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第10天：珠峰方向 → 然乌湖 → 左贡</h4>
+                        <p>行程：约250公里，从珠峰方向返回然乌湖后经邦达草原到左贡。</p>
+                        <p class="tip">休息：建议在然乌湖或左贡住宿，缓解高原反应后继续。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第11天：左贡 → 芒康 → 康定</h4>
+                        <p>行程：约220公里，左贡后经芒康返回康定，途经澜沧江大峡谷。</p>
+                        <p class="tip">过渡：康定是重要的交通枢纽，可补充物资和维修车辆。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第12天：康定 → 马尔康 → 岷山风景区</h4>
+                        <p>行程：约260公里，途经泸定桥后经雅江 valley 向北至马尔康。</p>
+                        <p class="tip">文化：马尔康是藏羌聚集地，可体验羌族文化和藏传佛教寺庙。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第13天：马尔康 → 金川 → 小金县</h4>
+                        <p>行程：约180公里，途经甲居藏寨（返回）后经雅江北段到小金县。</p>
+                        <p class="tip">返程：此时已基本返回熟悉路线，可放慢速度欣赏返程景色。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第14天：小金县 → 四姑娘山 → 汶川</h4>
+                        <p>行程：约150公里，途经小金县后折返四姑娘山景区，下午至汶川。</p>
+                        <p class="tip">景观：返程再次欣赏四姑娘山，可选择不同角度或徒步路线。</p>
+                    </div>
+                    <div class="route-day">
+                        <h4>第15天：汶川 → 成都（结束旅程）</h4>
+                        <p>行程：约160公里，途经汶川特殊教育学校纪念馆后返回成都。</p>
+                        <p class="tip": "结束：完整的川藏线南线自驾旅程结束，返程可选择高速或国道。</p>
+                    </div>
+                </div>
+            `;
+            break;
+        default:
+            title = '行程规划';
+            itemsHtml = '<p>请选择行程天数查看详细路线。</p>';
     }
     
     contentDiv.innerHTML = `<h3>${title}</h3>${itemsHtml}`;
