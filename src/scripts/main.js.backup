@@ -163,31 +163,26 @@ function updatePhotoDisplay(type, container) {
             itemsHtml = `
                 <div class="scenery-grid">
                     <div class="scenery-item">
-                        <img src="/public/images/scenery/yalasnow.jpg" alt="雅拉雪山" class="scenery-img">
                         <h4>雅拉雪山</h4>
                         <p>海拔7294米，终年雪山，是川藏线最著名的雪山景观之一。最佳观赏时间：4-6月，上午时分云雾较少。</p>
                         <p class="tip">小贴士：可在察瓦龙镇观景台俯瞰全貌，注意防晒和保暖。</p>
                     </div>
                     <div class="scenery-item">
-                        <img src="/public/images/scenery/ranwu.jpg" alt="然乌湖" class="scenery-img">
                         <h4>然乌湖</h4>
                         <p>被誉为“人间仙湖”，湖水澄澈如镜，倒映着雪山和森林。最佳旅游季节：5-10月。</p>
                         <p class="tip">小贴士：湖边有藏民家访体验，可尝试奶酪和青稞酒。</p>
                     </div>
                     <div class="scenery-item">
-                        <img src="/public/images/scenery/basumtso.jpg" alt="巴松措" class="scenery-img">
                         <h4>巴松措</h4>
                         <p>“神湖”之美，湖光山色相映成趣，四季景色各异。春季杜鹃花开尤为壮观。</p>
                         <p class="tip">小贴士：环湖步行约2小时，沿途有多个观景点可拍摄倒影。</p>
                     </div>
                     <div class="scenery-item">
-                        <img src="/public/images/scenery/72hairpin.jpg" alt="72拐" class="scenery-img">
                         <h4>72拐</h4>
                         <p>海拔4000多米的蜿蜒山路，共有72个弯道，是川藏线上最具挑战的路段之一。</p>
                         <p class="tip">小贴士：上坡时使用低挡，下坡时靠边行驶，注意迎车。</p>
                     </div>
                     <div class="scenery-item">
-                        <img src="/public/images/scenery/midui.jpg" alt="米堆冰川" class="scenery-img">
                         <h4>米堆冰川</h4>
                         <p>中国最低海拔现代冰川，冰川下方有原始森林，形成独特的“冰川森林”景观。</p>
                         <p class="tip">小贴士：建议上午前往，下午易有雾气影响能见度。</p>
@@ -200,14 +195,12 @@ function updatePhotoDisplay(type, container) {
             itemsHtml = `
                 <div class="accommodation-list">
                     <div class="accommodation-item">
-                        <img src="/public/images/accommodation/hilton.jpg" alt="林芝希尔顿逸林酒店" class="accommodation-img">
                         <h4>林芝希尔顿逸林酒店</h4>
                         <p>⭐⭐⭐⭐⭐ | 林芝市区 | 约¥400-600/晚</p>
                         <p>提供氧气袋和高原反应药品，早餐包含藏式馕和甜茶。</p>
                         <p class="tip">适合：首次进藏需要缓冲的游客</p>
                     </div>
                     <div class="accommodation-item">
-                        <img src="/public/images/accommodation/gesar.jpg" alt="波密古乡格萨尔王庄园" class="accommodation-img">
                         <h4>波密古乡格萨尔王庄园</h4>
                         <p>⭐⭐⭐⭐ | 波密县 | 约¥250-350/晚</p>
                         <p>藏式花园小院，房间带藏式装修，可体验藏家烤火。</p>
@@ -239,7 +232,6 @@ function updatePhotoDisplay(type, container) {
             itemsHtml = `
                 <div class="food-grid">
                     <div class="food-item">
-                        <img src="/public/images/food/buttertea.jpg" alt="酥油茶" class="food-img">
                         <h4>酥油茶</h4>
                         <p>藏家日常饮品，由茶、酥油和盐搅拌而成，高热量易于耐寒。</p>
                         <p class="tip">品尝建议：刚端上来时热饮，不要一次喝太多以免不适。</p>
@@ -255,9 +247,8 @@ function updatePhotoDisplay(type, container) {
                         <p class="tip">最佳餐馆：林芝的“桃花庄园”、波密的“八一食堂”。</p>
                     </div>
                     <div class="food-item">
-                        <img src="/public/images/food/stonechicken.jpg" alt="石锅鸡" class="food-img">
                         <h4>石锅鸡（巴松措特色）</h4>
-                        <p>用当地石锅慢炫的鸡肉汤，加入木耳、香菇和 Highland barley。</p>
+                        <p>用当地石锅慢炖的鸡肉汤，加入木耳、香菇和 Highland barley。</p>
                         <p class="tip">必须尝试：巴松措湖边的石锅鸡馆，鱼汤同样值得一试。</p>
                     </div>
                     <div class="food-item">
@@ -278,7 +269,6 @@ function updatePhotoDisplay(type, container) {
             itemsHtml = `
                 <div class="culture-list">
                     <div class="culture-item">
-                        <img src="/public/images/culture/temple.jpg" alt="藏传佛教寺庙" class="culture-img">
                         <h4>藏传佛教寺庙</h4>
                         <p>沿途可见诸多寺庙，如波密的嘎托寺、昌都的觉东寺等。</p>
                         <p class="tip">参观礼仪：逆时针转经轮、不要触摸佛像、保持安静。</p>
@@ -294,7 +284,6 @@ function updatePhotoDisplay(type, container) {
                         <p class="tip">尊重观看：保持距离不要围观太近，可拍远景但不建议近距离拍摄新娘。</p>
                     </div>
                     <div class="culture-item">
-                        <img src="/public/images/culture/butterflower.jpg" alt="酥油花制作" class="culture-img">
                         <h4>酥油花制作</h4>
                         <p>冬季藏民用酥油和矿物质颜料塑造成各种佛像和花卉。</p>
                         <p class="tip">欣赏地点：部分寺庙冬季会展酥油花，夏季较少可见。</p>

@@ -804,3 +804,25 @@ footer p:last-child {
     line-height: 1.6;
     margin-bottom: 0.75rem;
 }
+
+/* Image styles for photo galleries */
+.scenery-img, .accommodation-img, .food-img, .culture-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.scenery-grid, .accommodation-list, .food-grid, .culture-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .scenery-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .accommodation-list { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .food-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+    .culture-list { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+}
