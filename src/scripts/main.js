@@ -1,6 +1,25 @@
 // Main JavaScript file for G318 Travel Website
 document.addEventListener('DOMContentLoaded', function() {
     console.log('318旅行网站已加载');
+    // Performance monitoring
+    const perfStart = performance.now();
+    
+    // Log performance metrics after load
+    window.addEventListener('load', function() {
+        const perfEnd = performance.now();
+        const loadTime = perfEnd - perfStart;
+        console.log(`页面加载时间: ${loadTime.toFixed(2)}ms`);
+        
+        // Store in localStorage for analytics (if needed)
+        try {
+            const loads = parseInt(localStorage.getItem('g318_page_loads') || '0') + 1;
+            localStorage.setItem('g318_page_loads', loads.toString());
+            localStorage.setItem('g318_last_load_time', loadTime.toFixed(2));
+        } catch (e) {
+            // LocalStorage might be disabled in some contexts
+        }
+    });
+
     
     // Initialize button interactions
     initButtonInteractions();
@@ -8,6 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add smooth scrolling for anchor links
     initSmoothScrolling();
+    
+    // Initialize interactive map
+    initInteractiveMap();
+    
+    // Initialize comment/review system
+    initCommentSystem();
 });
 
 function initButtonInteractions() {
@@ -481,6 +506,117 @@ function updateRouteDisplay(days, container) {
     container.appendChild(contentDiv);
 }
 
+
+function initInteractiveMap() {
+    // Check if map element exists
+    const mapElement = document.getElementById('g318-map');
+    if (!mapElement) {
+        console.log('Map element not found');
+        return;
+    }
+    
+    // Initialize the map centered on G318 route
+    const map = L.map('g318-map').setView([30.0, 95.0], 6); // Approximate center of G318
+    
+    // Add OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 18,
+    }).addTo(map);
+    
+    // Define key G318 scenic spots with coordinates and info
+    const scenicSpots = [
+        {
+            name: "雅拉雪山",
+            lat: 29.8476,
+            lng: 90.1652,
+            description: "海拔7294米，终年雪山，是川藏线最著名的雪山景观之一。",
+            elevation: "7294米",
+            bestTime: "4-6月"
+        },
+        {
+            name: "然乌湖",
+            lat: 29.3063,
+            lng: 95.9038,
+            description: "被誉为“人间仙湖”，湖水澄澈如镜，倒映着雪山和森林。",
+            elevation: "3800米",
+            bestTime: "5-10月"
+        },
+        {
+            name: "巴松措",
+            lat: 29.1632,
+            lng: 95.0887,
+            description: "“神湖”之美，湖光山色相映成趣，四季景色各异。春季杜鹃花开尤为壮观。",
+            elevation: "3538米",
+            bestTime: "3-5月（杜鹃花季）"
+        },
+        {
+            name: "72拐",
+            lat: 30.0074,
+            lng: 90.0574,
+            description: "海拔4000多米的蜿蜒山路，共有72个弯道，是川藏线上最具挑战的路段之一。",
+            elevation: "4000+米",
+            bestTime: "全年（注意天气）"
+        },
+        {
+            name: "米堆冰川",
+            lat: 28.9552,
+            lng: 98.7933,
+            description: "中国最低海拔现代冰川，冰川下方有原始森林，形成独特的‘冰川森林’景观。",
+            elevation: "2400米",
+            bestTime: "10-次年4月"
+        },
+        {
+            name: "鲁朗林海",
+            lat: 29.5653,
+            lng: 94.4411,
+            description: "被誉为‘江南的西藏’，森林覆盖率高，空气湿润，四季如春。",
+            elevation: "3400米",
+            bestTime: "3-10月"
+        },
+        {
+            name: "拉萨布达拉宫",
+            lat: 29.6543,
+            lng: 91.1174,
+            description: "世界上海拔最高的古宫殿群，藏传佛教的圣地和象征。",
+            elevation: "3700米",
+            bestTime: "5-10月"
+        }
+    ];
+    
+    // Add markers for each scenic spot
+    scenicSpots.forEach(spot => {
+        const marker = L.marker([spot.lat, spot.lng]).addTo(map);
+        
+        const popupContent = `
+            <div class="map-popup">
+                <h4>${spot.name}</h4>
+                <p><strong>描述：</strong>${spot.description}</p>
+                <p><strong>海拔：</strong>${spot.elevation}</p>
+                <p><strong>最佳季节：</strong>${spot.bestTime}</p>
+            </div>
+        `;
+        
+        marker.bindPopup(popupContent);
+    });
+    
+    // Add a polyline for the G318 route (simplified)
+    const g318Route = [
+        [30.5728, 104.0668], // 成都
+        [30.2734, 102.3211], // 泸定
+        [29.5771, 94.3589],  // 林芝
+        [29.6543, 91.1174],  // 拉萨
+    ];
+    
+    L.polyline(g318Route, {color: '#ff385c', weight: 4, opacity: 0.8}).addTo(map)
+        .bindLink('<a href="#">查看详细路线</a>');
+    
+    // Fit map to show all markers and route
+    const allPoints = scenicSpots.map(spot => [spot.lat, spot.lng]).concat(g318Route);
+    const group = new L.featureGroup(allPoints.map(L.latLng));
+    map.fitBounds(group.getBounds().pad(0.2));
+}
+
 function initSmoothScrolling() {
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -500,6 +636,272 @@ function initSmoothScrolling() {
         });
     });
 }
+
+
+
+function initCommentSystem() {
+    // Initialize review form functionality
+    initReviewForm();
+    initReviewFilters();
+    initRatingStars();
+    
+    // Load sample reviews (in real app, this would come from API)
+    loadSampleReviews();
+}
+
+function initReviewForm() {
+    const addReviewBtn = document.getElementById('add-review-btn');
+    const reviewModal = document.getElementById('review-modal');
+    const modalCloseBtns = document.querySelectorAll('.modal-close');
+    const reviewForm = document.getElementById('review-form');
+    
+    if (addReviewBtn && reviewModal) {
+        // Open modal
+        addReviewBtn.addEventListener('click', function() {
+            reviewModal.style.display = 'block';
+            // Reset form
+            reviewForm.reset();
+            document.getElementById('rating-value').value = '0';
+            resetRatingStars();
+        });
+    }
+    
+    // Close modal
+    modalCloseBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const modal = btn.closest('.modal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+    
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
+        }
+    });
+    
+    // Handle form submission
+    if (reviewForm) {
+        reviewForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitReview();
+        });
+    }
+}
+
+function initRatingStars() {
+    const stars = document.querySelectorAll('.rating-stars .star');
+    const ratingValue = document.getElementById('rating-value');
+    
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            const value = parseInt(this.getAttribute('data-value'));
+            ratingValue.value = value;
+            updateRatingDisplay(value);
+        });
+        
+        star.addEventListener('mouseover', function() {
+            const value = parseInt(this.getAttribute('data-value'));
+            previewRating(value);
+        });
+        
+        star.addEventListener('mouseout', function() {
+            const value = parseInt(ratingValue.value) || 0;
+            previewRating(value);
+        });
+    });
+}
+
+function updateRatingDisplay(value) {
+    const stars = document.querySelectorAll('.rating-stars .star');
+    stars.forEach((star, index) => {
+        if (index < value) {
+            star.textContent = '★';
+            star.style.color = '#ff385c';
+        } else {
+            star.textContent = '☆';
+            star.style.color = '#ccc';
+        }
+    });
+}
+
+function previewRating(value) {
+    const stars = document.querySelectorAll('.rating-stars .star');
+    stars.forEach((star, index) => {
+        if (index < value) {
+            star.textContent = '★';
+            star.style.color = '#ffed4a';
+        } else {
+            star.textContent = '☆';
+            star.style.color = '#f0f0f0';
+        }
+    });
+}
+
+function resetRatingStars() {
+    updateRatingDisplay(0);
+}
+
+function initReviewFilters() {
+    const typeFilter = document.getElementById('review-type');
+    const sortFilter = document.getElementById('review-sort');
+    
+    if (typeFilter) {
+        typeFilter.addEventListener('change', filterReviews);
+    }
+    
+    if (sortFilter) {
+        sortFilter.addEventListener('change', filterReviews);
+    }
+}
+
+function filterReviews() {
+    const typeFilter = document.getElementById('review-type').value;
+    const sortFilter = document.getElementById('review-sort').value;
+    const reviewsContainer = document.getElementById('reviews-container');
+    
+    if (!reviewsContainer) return;
+    
+    // Get all review cards
+    const reviewCards = Array.from(reviewsContainer.querySelectorAll('.review-card'));
+    
+    // Filter by type
+    const filteredCards = reviewCards.filter(card => {
+        if (typeFilter === 'all') return true;
+        // In a real implementation, we'd check data attributes on the card
+        // For now, we'll show all since we're using sample data
+        return true;
+    });
+    
+    // Sort reviews
+    const sortedCards = filteredCards.sort((a, b) => {
+        if (sortFilter === 'newest') return -1; // Keep original order (newest first in our sample)
+        if (sortFilter === 'oldest') return 1;  // Reverse order
+        if (sortFilter === 'rating') {
+            // Extract rating from card (simplified)
+            const ratingA = a.querySelector('.review-rating').textContent.length;
+            const ratingB = b.querySelector('.review-rating').textContent.length;
+            return ratingB - ratingA;
+        }
+        return 0;
+    });
+    
+    // Clear and re-add filtered/sorted cards
+    reviewsContainer.innerHTML = '';
+    sortedCards.forEach(card => reviewsContainer.appendChild(card));
+}
+
+function loadSampleReviews() {
+    // In a real application, this would fetch from an API
+    // For now, we already have sample reviews in the HTML
+    console.log('Sample reviews loaded');
+}
+
+function submitReview() {
+    // Get form values
+    const reviewerName = document.getElementById('reviewer-name').value.trim();
+    const reviewType = document.getElementById('review-type').value;
+    const reviewTitle = document.getElementById('review-title').value.trim();
+    const ratingValue = document.getElementById('rating-value').value;
+    const reviewContent = document.getElementById('review-content').value.trim();
+    const reviewTags = document.getElementById('review-tags').value.trim();
+    
+    // Basic validation
+    if (!reviewerName || !reviewType || !reviewTitle || !ratingValue || !reviewContent) {
+        showNotification('请填写所有必填字段', 'error');
+        return;
+    }
+    
+    if (parseInt(ratingValue) < 1 || parseInt(ratingValue) > 5) {
+        showNotification('请选择有效的评分', 'error');
+        return;
+    }
+    
+    // Create new review card
+    const newReview = createReviewCard({
+        name: reviewerName,
+        type: reviewType,
+        title: reviewTitle,
+        rating: parseInt(ratingValue),
+        content: reviewContent,
+        tags: reviewTags,
+        date: new Date().toLocaleDateString('zh-CN')
+    });
+    
+    // Add to container
+    const reviewsContainer = document.getElementById('reviews-container');
+    if (reviewsContainer) {
+        // Add to beginning to show newest first
+        reviewsContainer.insertBefore(newReview, reviewsContainer.firstChild);
+        
+        // Hide modal
+        const modal = document.getElementById('review-modal');
+        if (modal) {
+            modal.style.display = 'none';
+        }
+        
+        // Reset form
+        document.getElementById('review-form').reset();
+        resetRatingStars();
+        
+        showNotification('评论发布成功！', 'success');
+        
+        // Re-filter to maintain current filter/sort settings
+        filterReviews();
+    }
+}
+
+function createReviewCard(data) {
+    // Create review card element
+    const card = document.createElement('div');
+    card.className = 'review-card';
+    
+    // Format tags
+    const tagsArray = data.tags ? data.tags.split(' ').filter(tag => tag.trim() !== '') : [];
+    const tagsHtml = tagsArray.map(tag => {
+        // Ensure tag starts with #
+        const cleanTag = tag.startsWith('#') ? tag : '#' + tag;
+        return `<span class="tag">${cleanTag}</span>`;
+    }).join('');
+    
+    card.innerHTML = `
+        <div class="review-header">
+            <div class="reviewer-info">
+                <div class="reviewer-avatar">${data.name.charAt(0)}</div>
+                <div class="reviewer-name">${data.name}</div>
+                <div class="review-date">${data.date}</div>
+            </div>
+            <div class="review-rating">
+                ${'★'.repeat(data.rating)}${'☆'.repeat(5 - data.rating)}
+            </div>
+        </div>
+        <div class="review-content">
+            <h4>${data.title}</h4>
+            <p>${data.content}</p>
+        </div>
+        <div class="review-tags">
+            ${tagsHtml}
+        </div>
+    `;
+    
+    return card;
+}
+    // Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(registration => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          })
+          .catch(error => {
+            console.log('ServiceWorker registration failed: ', error);
+          });
+      });
+    }
+
 
 // Notification system
 function showNotification(message, type = 'info') {

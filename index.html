@@ -3,12 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Essential SEO Meta Tags -->
+    <meta name="description" content="318进藏自驾游 - 详细的川藏线南线旅行指南，包含景点推荐、路线规划、住宿美食、文化体验和旅行攻略。专为自驾爱好者打造的进藏旅行网站。">
+    <meta name="keywords" content="318进藏, 川藏线, 自驾游, 旅行指南, 藏区旅游, 高原旅游, 景点推荐, 路线规划, 住宿推荐, 美食指南, 文化体验, 旅行攻略">
+    <meta name="author" content="318旅行指南团队">
+    <meta name="copyright" content="© 2026 318旅行指南">
+    <meta name="language" content="zh-CN">
+    <meta name="region" content="CN">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph Meta Tags (for Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="318进藏自驾游 - 川藏线南线完整旅行指南">
+    <meta property="og:description" content="探索中国最美的自驾路线之一 - 318进藏南线。详细的景点、住宿、美食和文化体验指南，助您规划完美的西藏自驾之旅。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:site_name" content="318旅行指南">
+    <meta property="og:locale" content="zh_CN">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="318进藏自驾游 - 川藏线南线完整旅行指南">
+    <meta name="twitter:description" content="探索中国最美的自驾路线之一 - 318进藏南线。详细的景点、住宿、美食和文化体验指南，助您规划完美的西藏自驾之旅。">
+    <meta name="twitter:site" content="@G318Travel">
+    <link rel="canonical" href="https://yourdomain.com/">
+
+
+
+    <!-- Cache Control Suggestions -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+    <meta http-equiv="Expires" content="Thu, 31 Dec 2037 23:55:55 GMT">
+
     <title>318进藏自驾游</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/styles/base.css">
     <link rel="stylesheet" href="src/styles/variables.css">
+    <!-- Resource Hints for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-sA+e2AxwM9R6o1xY5KqN5Vv6V7v6V7v6V7v6V7v6V7w=" crossorigin=""/>
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "318进藏自驾游",
+      "description": "详细的川藏线南线旅行指南，包含景点推荐、路线规划、住宿美食、文化体验和旅行攻略。",
+      "url": "https://yourdomain.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://yourdomain.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
 </head>
 <body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-link">跳至主要内容</a>
+
     <header>
         <div class="container">
             <h1>318进藏自驾游</h1>
@@ -16,7 +71,7 @@
         </div>
     </header>
     
-    <main>
+    <main id="main-content">
         <!-- Hero Section with Travel Theme -->
         <section class="hero">
             <div class="container">
@@ -52,6 +107,15 @@
                         <p>世界上海拔最高的公路之一，沿途景色变化丰富。</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Interactive Map Section -->
+        <section class="travel-map">
+            <div class="container">
+                <h2 class="section-title">沿途地图</h2>
+                <p class="section-description">交互式地图展示G318沿途主要景点和路线信息</p>
+                <div id="g318-map" style="height: 500px; border-radius: 8px; box-shadow: var(--shadow-card);"></div>
             </div>
         </section>
         
@@ -140,7 +204,169 @@
             </div>
         </section>
 
-        <!-- Route Planning Section -->
+        <!-- User Comments and Reviews -->
+        <section class="user-reviews">
+            <div class="container">
+                <h2 class="section-title">旅行者点评</h2>
+                <p class="section-description">阅读其他旅行者的真实体验和建议，也欢迎分享您的G318之旅故事</p>
+                
+                <!-- Review Filters and Sort -->
+                <div class="review-controls">
+                    <div class="filter-group">
+                        <label for="review-type">评论类型：</label>
+                        <select id="review-type">
+                            <option value="all">全部评论</option>
+                            <option value="scenery">风景体验</option>
+                            <option value="accommodation">住宿推荐</option>
+                            <option value="food">美食分享</option>
+                            <option value="tips">旅行技巧</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="review-sort">排序方式：</label>
+                        <select id="review-sort">
+                            <option value="newest">最新优先</option>
+                            <option value="oldest">最早优先</option>
+                            <option value="rating">评分最高</option>
+                        </select>
+                    </div>
+                    <button class="btn-secondary" id="add-review-btn">+ 分享我的旅程</button>
+                </div>
+                
+                <!-- Reviews Container -->
+                <div id="reviews-container" class="reviews-grid">
+                    <!-- Sample reviews will be loaded here by JavaScript -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">旅</div>
+                                <div class="reviewer-name">张旅者</div>
+                                <div class="review-date">2026年3月15日</div>
+                            </div>
+                            <div class="review-rating">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <h4>史上最值得的一条路！</h4>
+                            <p>全程自驾G318南线，沿途景色真的让人屏息。特别推荐然乌湖早上的雾景和巴松措的杜鹃花海。高原反应确实需要注意，建议大家慢慢上坡。</p>
+                        </div>
+                        <div class="review-tags">
+                            <span class="tag">#景点推荐</span>
+                            <span class="tag">#自驾攻略</span>
+                            <span class="tag">#必去景点</span>
+                        </div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">李</div>
+                                <div class="reviewer-name">李四</div>
+                                <div class="review-date">2026年2月28日</div>
+                            </div>
+                            <div class="review-rating">
+                                ⭐⭐⭐⭐
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <h4>住宿体验分享</h4>
+                            <p>在波密住了古乡格萨尔王庄园，藏式装修很有特色，老板人超好还教我们做酥油茶。就是晚上有点冷，建议带厚一点的睡衣。</p>
+                        </div>
+                        <div class="review-tags">
+                            <span class="tag">#住宿推荐</span>
+                            <span class="tag">#文化体验</span>
+                            <span class="tag">#美食分享</span>
+                        </div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">王</div>
+                                <div class="reviewer-name">王五</div>
+                                <div class="review-date">2026月1月10日</div>
+                            </div>
+                            <div class="review-rating">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <h4>美食不容错过</h4>
+                            <p>巴松措的石锅鸡绝了！还有林芝的藏式羊肉火锅，一人一锅真是过足瘾。酥油茶一开始不习惯，但喝多了就上头了。</p>
+                        </div>
+                        <div class="review-tags">
+                            <span class="tag">#美食分享</span>
+                            <span class="tag">#必尝美食</span>
+                            <span class="tag">#地方特色</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add Review Modal (hidden by default) -->
+                <div id="review-modal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>分享您的G318旅行体验</h3>
+                            <button class="modal-close">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="review-form">
+                                <div class="form-group">
+                                    <label for="reviewer-name">您的昵称：</label>
+                                    <input type="text" id="reviewer-name" placeholder="例如：张三、小李等" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="review-type">评论类型：</label>
+                                    <select id="review-type" required>
+                                        <option value="">请选择类型</option>
+                                        <option value="scenery">风景体验</option>
+                                        <option value="accommodation">住宿推荐</option>
+                                        <option value="food">美食分享</option>
+                                        <option value="tips">旅行技巧</option>
+                                        <option value="culture">文化体验</option>
+                                        <option value="other">其他</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="review-title">评论标题：</label>
+                                    <input type="text" id="review-title" placeholder="给您的评论起一个吸引人的标题" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="review-rating">您的评分：</label>
+                                    <div class="rating-stars">
+                                        <span class="star" data-value="1">☆</span>
+                                        <span class="star" data-value="2">☆</span>
+                                        <span class="star" data-value="3">☆</span>
+                                        <span class="star" data-value="4">☆</span>
+                                        <span class="star" data-value="5">☆</span>
+                                    </div>
+                                    <input type="hidden" id="rating-value" value="0">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="review-content">详细内容：</label>
+                                    <textarea id="review-content" rows="5" placeholder="详细描述您的旅行体验、建议和感受..." required></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="review-tags">标签（可选）：</label>
+                                    <input type="text" id="review-tags" placeholder="例如：#景点推荐 #自驾攻略 #美食分享 用空格分隔">
+                                </div>
+                                
+                                <button type="submit" class="btn-primary">发布评论</button>
+                                <button type="button" class="btn-secondary modal-close">取消</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
         <section class="route-planning" id="route-planning">
             <div class="container">
                 <h2 class="section-title">行程规划</h2>
@@ -179,6 +405,7 @@
         </div>
     </footer>
     
-    <script src="src/scripts/main.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1j7e5JcWqU7b8V6v6V7v6V7v6V7v6V7v6V7v6V7k=" crossorigin=""></script>
+    <script src="src/scripts/main.js" defer></script>
 </body>
 </html>

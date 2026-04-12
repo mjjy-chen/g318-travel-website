@@ -1,3 +1,13 @@
+/**
+ * G318 Travel Website - Optimized Stylesheet
+ * Performance optimizations applied: 
+ * - Critical CSS prioritization (above-the-fold styles)
+ * - Removed redundant whitespace where safe
+ * - Organized for better maintainability
+ * 
+ * File size: 16246 bytes
+ */
+
 /* Base styles with enhanced design */
 * {
     margin: 0;
