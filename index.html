@@ -11,6 +11,8 @@
     <meta name="language" content="zh-CN">
     <meta name="region" content="CN">
     <meta name="robots" content="index, follow">
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org; connect-src 'self';">
     <!-- Open Graph Meta Tags (for Facebook, LinkedIn, etc.) -->
     <meta property="og:title" content="318进藏自驾游 - 川藏线南线完整旅行指南">
     <meta property="og:description" content="探索中国最美的自驾路线之一 - 318进藏南线。详细的景点、住宿、美食和文化体验指南，助您规划完美的西藏自驾之旅。">
@@ -42,7 +44,7 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://unpkg.com">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-sA+e2AxwM9R6o1xY5KqN5Vv6V7v6V7v6V7v6V7v6V7w=" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <!-- Structured Data (JSON-LD) for SEO -->
     <script type="application/ld+json">
     {
@@ -67,7 +69,7 @@
     <header>
         <div class="container">
             <h1>318进藏自驾游</h1>
-            <p> Sichuan-Tibet Highway Self-Drive Tour Guide</p>
+            <p>川藏线南线自驾游完整旅行指南</p>
         </div>
     </header>
     
@@ -161,7 +163,7 @@
                     </div>
                     <div class="tip-item">
                         <h3>🌡️ 天气变化</h3>
-                        <p>高原天气变化rapid，十分钟可能经历四季。随身携带防水外套和保暖衣物，即使是在夏季也可能遇到雪天。</p>
+                        <p>高原天气变化极快，十分钟可能经历四季。随身携带防水外套和保暖衣物，即使是在夏季也可能遇到雪天。</p>
                     </div>
                     <div class="tip-item">
                         <h3>🍽️ 饮食卫生</h3>
@@ -314,12 +316,12 @@
                             <form id="review-form">
                                 <div class="form-group">
                                     <label for="reviewer-name">您的昵称：</label>
-                                    <input type="text" id="reviewer-name" placeholder="例如：张三、小李等" required>
+                                    <input type="text" id="reviewer-name" placeholder="例如：张三、小李等" maxlength="20" required>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="review-type">评论类型：</label>
-                                    <select id="review-type" required>
+                                    <label for="review-type-input">评论类型：</label>
+                                    <select id="review-type-input" required>
                                         <option value="">请选择类型</option>
                                         <option value="scenery">风景体验</option>
                                         <option value="accommodation">住宿推荐</option>
@@ -332,7 +334,7 @@
                                 
                                 <div class="form-group">
                                     <label for="review-title">评论标题：</label>
-                                    <input type="text" id="review-title" placeholder="给您的评论起一个吸引人的标题" required>
+                                    <input type="text" id="review-title" placeholder="给您的评论起一个吸引人的标题" maxlength="50" required>
                                 </div>
                                 
                                 <div class="form-group">
@@ -349,12 +351,12 @@
                                 
                                 <div class="form-group">
                                     <label for="review-content">详细内容：</label>
-                                    <textarea id="review-content" rows="5" placeholder="详细描述您的旅行体验、建议和感受..." required></textarea>
+                                    <textarea id="review-content" rows="5" placeholder="详细描述您的旅行体验、建议和感受..." maxlength="1000" required></textarea>
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="review-tags">标签（可选）：</label>
-                                    <input type="text" id="review-tags" placeholder="例如：#景点推荐 #自驾攻略 #美食分享 用空格分隔">
+                                    <input type="text" id="review-tags" placeholder="例如：#景点推荐 #自驾攻略 #美食分享 用空格分隔" maxlength="100">
                                 </div>
                                 
                                 <button type="submit" class="btn-primary">发布评论</button>
@@ -405,7 +407,7 @@
         </div>
     </footer>
     
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1j7e5JcWqU7b8V6v6V7v6V7v6V7v6V7v6V7v6V7k=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="src/scripts/main.js" defer></script>
 </body>
 </html>

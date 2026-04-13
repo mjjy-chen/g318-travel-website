@@ -163,31 +163,31 @@ function updatePhotoDisplay(type, container) {
             itemsHtml = `
                 <div class="scenery-grid">
                     <div class="scenery-item">
-                        <img src="/public/images/scenery/yalasnow.jpg" alt="雅拉雪山" class="scenery-img">
+                        <img src="/public/images/scenery/yalasnow.jpg" alt="雅拉雪山" class="scenery-img" loading="lazy">
                         <h4>雅拉雪山</h4>
                         <p>海拔7294米，终年雪山，是川藏线最著名的雪山景观之一。最佳观赏时间：4-6月，上午时分云雾较少。</p>
                         <p class="tip">小贴士：可在察瓦龙镇观景台俯瞰全貌，注意防晒和保暖。</p>
                     </div>
                     <div class="scenery-item">
-                        <img src="/public/images/scenery/ranwu.jpg" alt="然乌湖" class="scenery-img">
+                        <img src="/public/images/scenery/ranwu.jpg" alt="然乌湖" class="scenery-img" loading="lazy">
                         <h4>然乌湖</h4>
                         <p>被誉为“人间仙湖”，湖水澄澈如镜，倒映着雪山和森林。最佳旅游季节：5-10月。</p>
                         <p class="tip">小贴士：湖边有藏民家访体验，可尝试奶酪和青稞酒。</p>
                     </div>
                     <div class="scenery-item">
-                        <img src="/public/images/scenery/basumtso.jpg" alt="巴松措" class="scenery-img">
+                        <img src="/public/images/scenery/basumtso.jpg" alt="巴松措" class="scenery-img" loading="lazy">
                         <h4>巴松措</h4>
                         <p>“神湖”之美，湖光山色相映成趣，四季景色各异。春季杜鹃花开尤为壮观。</p>
                         <p class="tip">小贴士：环湖步行约2小时，沿途有多个观景点可拍摄倒影。</p>
                     </div>
                     <div class="scenery-item">
-                        <img src="/public/images/scenery/72hairpin.jpg" alt="72拐" class="scenery-img">
+                        <img src="/public/images/scenery/72hairpin.jpg" alt="72拐" class="scenery-img" loading="lazy">
                         <h4>72拐</h4>
                         <p>海拔4000多米的蜿蜒山路，共有72个弯道，是川藏线上最具挑战的路段之一。</p>
                         <p class="tip">小贴士：上坡时使用低挡，下坡时靠边行驶，注意迎车。</p>
                     </div>
                     <div class="scenery-item">
-                        <img src="/public/images/scenery/midui.jpg" alt="米堆冰川" class="scenery-img">
+                        <img src="/public/images/scenery/midui.jpg" alt="米堆冰川" class="scenery-img" loading="lazy">
                         <h4>米堆冰川</h4>
                         <p>中国最低海拔现代冰川，冰川下方有原始森林，形成独特的“冰川森林”景观。</p>
                         <p class="tip">小贴士：建议上午前往，下午易有雾气影响能见度。</p>
@@ -200,14 +200,14 @@ function updatePhotoDisplay(type, container) {
             itemsHtml = `
                 <div class="accommodation-list">
                     <div class="accommodation-item">
-                        <img src="/public/images/accommodation/hilton.jpg" alt="林芝希尔顿逸林酒店" class="accommodation-img">
+                        <img src="/public/images/accommodation/hilton.jpg" alt="林芝希尔顿逸林酒店" class="accommodation-img" loading="lazy">
                         <h4>林芝希尔顿逸林酒店</h4>
                         <p>⭐⭐⭐⭐⭐ | 林芝市区 | 约¥400-600/晚</p>
                         <p>提供氧气袋和高原反应药品，早餐包含藏式馕和甜茶。</p>
                         <p class="tip">适合：首次进藏需要缓冲的游客</p>
                     </div>
                     <div class="accommodation-item">
-                        <img src="/public/images/accommodation/gesar.jpg" alt="波密古乡格萨尔王庄园" class="accommodation-img">
+                        <img src="/public/images/accommodation/gesar.jpg" alt="波密古乡格萨尔王庄园" class="accommodation-img" loading="lazy">
                         <h4>波密古乡格萨尔王庄园</h4>
                         <p>⭐⭐⭐⭐ | 波密县 | 约¥250-350/晚</p>
                         <p>藏式花园小院，房间带藏式装修，可体验藏家烤火。</p>
@@ -239,7 +239,7 @@ function updatePhotoDisplay(type, container) {
             itemsHtml = `
                 <div class="food-grid">
                     <div class="food-item">
-                        <img src="/public/images/food/buttertea.jpg" alt="酥油茶" class="food-img">
+                        <img src="/public/images/food/buttertea.jpg" alt="酥油茶" class="food-img" loading="lazy">
                         <h4>酥油茶</h4>
                         <p>藏家日常饮品，由茶、酥油和盐搅拌而成，高热量易于耐寒。</p>
                         <p class="tip">品尝建议：刚端上来时热饮，不要一次喝太多以免不适。</p>
@@ -255,9 +255,9 @@ function updatePhotoDisplay(type, container) {
                         <p class="tip">最佳餐馆：林芝的“桃花庄园”、波密的“八一食堂”。</p>
                     </div>
                     <div class="food-item">
-                        <img src="/public/images/food/stonechicken.jpg" alt="石锅鸡" class="food-img">
+                        <img src="/public/images/food/stonechicken.jpg" alt="石锅鸡" class="food-img" loading="lazy">
                         <h4>石锅鸡（巴松措特色）</h4>
-                        <p>用当地石锅慢炫的鸡肉汤，加入木耳、香菇和 Highland barley。</p>
+                        <p>用当地石锅慢炖的鸡肉汤，加入木耳、香菇和青稞。</p>
                         <p class="tip">必须尝试：巴松措湖边的石锅鸡馆，鱼汤同样值得一试。</p>
                     </div>
                     <div class="food-item">
@@ -278,7 +278,7 @@ function updatePhotoDisplay(type, container) {
             itemsHtml = `
                 <div class="culture-list">
                     <div class="culture-item">
-                        <img src="/public/images/culture/temple.jpg" alt="藏传佛教寺庙" class="culture-img">
+                        <img src="/public/images/culture/temple.jpg" alt="藏传佛教寺庙" class="culture-img" loading="lazy">
                         <h4>藏传佛教寺庙</h4>
                         <p>沿途可见诸多寺庙，如波密的嘎托寺、昌都的觉东寺等。</p>
                         <p class="tip">参观礼仪：逆时针转经轮、不要触摸佛像、保持安静。</p>
@@ -289,12 +289,12 @@ function updatePhotoDisplay(type, container) {
                         <p class="tip">时间参考：通常在公历6-7月之间，具体日期需查看当年中藏历。</p>
                     </div>
                     <div class="culture-item">
-                        <h4>藏式婚礼 customs</h4>
+                        <h4>藏式婚礼习俗</h4>
                         <p>若遇婚礼迎亲队伍，会看到新娘戴着凤冠霞帔，骑着装饰的马。</p>
                         <p class="tip">尊重观看：保持距离不要围观太近，可拍远景但不建议近距离拍摄新娘。</p>
                     </div>
                     <div class="culture-item">
-                        <img src="/public/images/culture/butterflower.jpg" alt="酥油花制作" class="culture-img">
+                        <img src="/public/images/culture/butterflower.jpg" alt="酥油花制作" class="culture-img" loading="lazy">
                         <h4>酥油花制作</h4>
                         <p>冬季藏民用酥油和矿物质颜料塑造成各种佛像和花卉。</p>
                         <p class="tip">欣赏地点：部分寺庙冬季会展酥油花，夏季较少可见。</p>
@@ -332,44 +332,44 @@ function updateRouteDisplay(days, container) {
             itemsHtml = `
                 <div class="route-grid">
                     <div class="route-day">
-                        <h4>第1天：成都 → 川主寺 → 岷山口</h4>
-                        <p>行程：约220公里，沿途观看岷山雪山，下午到达川主寺镇。</p>
-                        <p class="tip">住宿建议：川主寺镇客栈，体验藏家小院。</p>
+                        <h4>第1天：成都 → 雅安 → 康定</h4>
+                        <p>行程：约330公里，经成雅高速到雅安，翻越二郎山隧道后抵达康定。沿途可品尝雅安雅鱼。</p>
+                        <p class="tip">住宿建议：康定县城酒店较多，海拔2560米，注意轻微高反。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第2天：川主寺 → 丹巴县城</h4>
-                        <p>行程：约180公里，途经四姑娘山观景点， afternoon arrive at Danba.</p>
-                        <p class="tip">必看：丹巴甲居藏寨，全国著名的藏寨群落。</p>
+                        <h4>第2天：康定 → 折多山 → 新都桥</h4>
+                        <p>行程：约80公里，翻越折多山（4298米）后抵达"摄影师的天堂"新都桥。</p>
+                        <p class="tip">必看：折多山垭口远眺贡嘎雪山，新都桥秋季白杨林最美。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第3天：丹巴 → 新都桥</h4>
-                        <p>行程：约140公里，途经墨石公园和雅江河谷，到达“摄影师的天堂”新都桥。</p>
-                        <p class="tip">推荐：在新都桥镇拍摄夕阳下的圣光山和农家小院。</p>
+                        <h4>第3天：新都桥 → 理塘 → 巴塘</h4>
+                        <p>行程：约260公里，翻越高尔寺山（4412米）和剪子弯山（4658米），经"世界高城"理塘后下至巴塘。</p>
+                        <p class="tip">注意：理塘海拔4014米，建议不做剧烈运动，巴塘海拔仅2580米利于休整。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第4天：新都桥 → 泸定 → 岚皋山</h4>
-                        <p>行程：约190公里，过泸定桥后翻越岚皋山（4298米），进入康ding地区。</p>
-                        <p class="tip">注意：岚皋山是川藏线上的第一座高山垭口，做好防晒保暖。</p>
+                        <h4>第4天：巴塘 → 芒康 → 左贡</h4>
+                        <p>行程：约260公里，跨过金沙江大桥进入西藏，翻越拉乌山（4338米）和东达山（5130米）抵达左贡。</p>
+                        <p class="tip">重点：东达山是川藏线海拔最高垭口之一，备好氧气和厚衣物。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第5天：康定 → 新路海 → 札达</h4>
-                        <p>行程：约210公里，穿越折多山（4298米）和札拉山（4500多米），到达札达县。</p>
-                        <p class="tip">景观：沿途可见雪山、峡谷和高原草原交替的壮丽景色。</p>
+                        <h4>第5天：左贡 → 邦达 → 八宿</h4>
+                        <p>行程：约200公里，经邦达草原后翻越业拉山（4658米），下怒江72拐到八宿。</p>
+                        <p class="tip">奇观：怒江72拐是川藏线最壮观的盘山公路，务必控制车速。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第6天：札达 → 然乌湖 → 波密</h4>
-                        <p>行程：约180公里，途经东达山口（4700米）后下山到然乌湖，继续前往波密。</p>
-                        <p class="tip">重点：然乌湖被誉为“人间仙湖”，湖水澄澈如镜。</p>
+                        <h4>第6天：八宿 → 然乌湖 → 波密</h4>
+                        <p>行程：约220公里，上午游览然乌湖，沿帕隆藏布江谷地抵达波密。</p>
+                        <p class="tip">重点：然乌湖清晨最美，波密海拔2725米，氧气充足适合休整。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第7天：波密 → 八一 → 林芝</h4>
-                        <p>行程：约140公里，沿尼洋河谷前行，观察森林覆盖率明显增加。</p>
-                        <p class="tip": "体验：林芝被称为‘江南的西藏’，空气湿度大，植被丰富。</p>
+                        <h4>第7天：波密 → 鲁朗 → 林芝</h4>
+                        <p>行程：约230公里，穿越通麦天险（已通隧道），经过鲁朗林海，翻越色季拉山（4720米）远眺南迦巴瓦峰后到林芝。</p>
+                        <p class="tip">体验：鲁朗石锅鸡是必尝美食，色季拉山口看南迦巴瓦需运气。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第8天：林芝 → 拉萨</h4>
-                        <p>行程：约400公里（可选择飞缩时间），途经雅鲁藏布江大峡谷观景点。</p>
-                        <p class="tip": "终点：抵达圣城拉萨，结束川南段旅程，可继续北进或返回。</p>
+                        <h4>第8天：林芝 → 工布江达 → 拉萨</h4>
+                        <p>行程：约400公里，沿尼洋河谷上林拉高等级公路，经米拉山隧道到拉萨。</p>
+                        <p class="tip">终点：抵达圣城拉萨，建议休息1-2天适应海拔后再游览布达拉宫。</p>
                     </div>
                 </div>
             `;
@@ -379,54 +379,54 @@ function updateRouteDisplay(days, container) {
             itemsHtml = `
                 <div class="route-grid">
                     <div class="route-day">
-                        <h4>第1天：成都 → 汶川 → 松潘</h4>
-                        <p>行程：约160公里，途经汶川特殊教育学校纪念馆，到达松潘古城。</p>
-                        <p class="tip">文化：松潘是古代茶马古道重镇，保存有明代城墙。</p>
+                        <h4>第1天：成都 → 雅安 → 泸定</h4>
+                        <p>行程：约280公里，经成雅高速到雅安，穿二郎山隧道到泸定，游览泸定桥。</p>
+                        <p class="tip">文化：泸定桥是红军长征飞夺泸定桥的历史遗迹，值得驻足。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第2天：松潘 → 黄龙 → 川主寺</h4>
-                        <p>行程：约200公里，早上游览黄龙风景区（世界自然遗产），下午至川主寺。</p>
-                        <p class="tip">安排：黄龙建议早上去，下午云雾少景色佳。</p>
+                        <h4>第2天：泸定 → 康定 → 新都桥</h4>
+                        <p>行程：约120公里，上午逛康定城，下午翻折多山（4298米）到新都桥。</p>
+                        <p class="tip">安排：折多山垭口可远眺贡嘎雪山，傍晚新都桥拍落日最佳。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第3天：川主寺 → 甲居藏寨 → 鲁甸</h4>
-                        <p>行程：约150公里，上午游览丹巴甲居藏寨，下午前往鲁甸县。</p>
-                        <p class="tip">深度：在甲居藏寨可安排藏家访问和酥油茶体验。</p>
+                        <h4>第3天：新都桥 → 雅江 → 理塘</h4>
+                        <p>行程：约210公里，翻越高尔寺山和剪子弯山，经卡子拉山（4718米）到理塘。</p>
+                        <p class="tip">深度：理塘有长青春科尔寺，仓央嘉措的故乡，值得停留。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第4天：鲁甸 → 新都桥 → 理塘</h4>
-                        <p>行程：约220公里，途经墨石公园、雅江河谷和兔儿山（4576米）。</p>
-                        <p class="tip">过渡：理塘是藏区重要交通站点，海拔4014米。</p>
+                        <h4>第4天：理塘 → 稻城 → 亚丁</h4>
+                        <p>行程：约150公里，经海子山自然保护区（4685米）到稻城，下午继续前往亚丁村。</p>
+                        <p class="tip">准备：亚丁景区需提前购票，建议住亚丁村便于次日早起进山。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第5天：理塘 → 稻城 → 亚丁</h4>
-                        <p>行程：约150公里，途经雪山草原，下午到达稻城县，准备次日游亚丁。</p>
-                        <p class="tip">准备：亚丁景区需提前购票，建议租电动车环游。</p>
+                        <h4>第5天：亚丁景区游览日</h4>
+                        <p>全日游览亚丁自然保护区：冲古寺、洛绒牛场、牛奶海、五色海和仙乃日神山。</p>
+                        <p class="tip">体验：建议雇佣向导，全程约8小时徒步或骑马，体力消耗大。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第6天：亚丁景区游览日</h4>
-                        <p>全日游览亚丁自然保护区：牛奶海、五色海、珍珠海和仙乃日神山。</p>
-                        <p class="tip">体验：建议雇佣向导，全程约8小时徒步或电动车。</p>
+                        <h4>第6天：稻城 → 理塘 → 巴塘</h4>
+                        <p>行程：约260公里，从稻城返回理塘后沿G318继续西行至巴塘。</p>
+                        <p class="tip">过渡：巴塘是川藏线在四川的最后一站，海拔2580米适合休整。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第7天：稻城 → 香格里拉镇 → 藏王树</h4>
-                        <p>行程：约180公里，经央迈隆山口（4700多米）到达香格里拉镇。</p>
-                        <p class="tip">景观：途经梅里雪山 الوطنية公园观景点，远眺卡瓦格博峰。</p>
+                        <h4>第7天：巴塘 → 芒康 → 左贡</h4>
+                        <p>行程：约260公里，跨金沙江大桥入藏，翻越拉乌山和东达山（5130米）到左贡。</p>
+                        <p class="tip">注意：正式进入西藏，检查站需出示身份证和边防证。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第8天：香格里拉镇 → 芒康 → 左贡</h4>
-                        <p>行程：约220公里，途经澜沧江（ Mekong River）大峡谷。</p>
-                        <p class="tip": "奇观：澜沧江峡谷深度超过千米，被称为‘东方大峡谷’。</p>
+                        <h4>第8天：左贡 → 邦达 → 然乌湖</h4>
+                        <p>行程：约200公里，经邦达草原翻业拉山下72拐，过八宿到然乌湖。</p>
+                        <p class="tip">奇观：怒江72拐是川藏线最壮观的盘山公路，务必控制车速。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第9天：左贡 → 邦达草原 → 然乌湖</h4>
-                        <p>行程：约200公里，早上经左贡县后穿越邦达草原，下午到然乌湖。</p>
-                        <p class="tip">体验：邦达草原是典型的高原草原，可骑马或观赏牦牛群。</p>
+                        <h4>第9天：然乌湖 → 米堆冰川 → 波密</h4>
+                        <p>行程：约130公里，上午游览然乌湖和米堆冰川，下午到波密。</p>
+                        <p class="tip">体验：米堆冰川是中国最低海拔现代冰川，徒步往返约2小时。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第10天：然乌湖 → 波密 → 八一 → 林芝</h4>
-                        <p>行程：约180公里，早上欣赏然乌湖晨雾，下午返回林芝准备返程。</p>
-                        <p class="tip": "返程：林芝有机场可飞返成都，亦可继续原路返回。</p>
+                        <h4>第10天：波密 → 鲁朗 → 林芝 → 拉萨</h4>
+                        <p>行程：约630公里（林拉高等级公路），穿通麦隧道过鲁朗，翻色季拉山到林芝后直奔拉萨。</p>
+                        <p class="tip">返程：也可在林芝住一晚（第11天再到拉萨），分两天走更轻松。</p>
                     </div>
                 </div>
             `;
@@ -436,74 +436,74 @@ function updateRouteDisplay(days, container) {
             itemsHtml = `
                 <div class="route-grid">
                     <div class="route-day">
-                        <h4>第1-2天：成都 → 喇叭沟门 → 鲁甸（经四姑娘山）</h4>
-                        <p>行程：约300公里，深度游览四姑娘山景区（爬二峰或观光大巴）后经卧龙至鲁甸。</p>
-                        <p class="tip">安排：建议在四姑娘山住一晚，第二天早上继续西行。</p>
+                        <h4>第1天：成都 → 都江堰 → 映秀 → 日隆（四姑娘山）</h4>
+                        <p>行程：约220公里，经都江堰沿映秀到日隆镇，下午游览四姑娘山双桥沟。</p>
+                        <p class="tip">安排：双桥沟是四姑娘山最易到达的沟，观光车游览约3小时。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第3天：鲁甸 → 新都桥 → 理塘</h4>
-                        <p>行程：约220公里，途经雅江河谷观光和兔儿山翻越。</p>
-                        <p class="tip">过渡：理塘海拔4014米，是重要的藏区聚集地。</p>
+                        <h4>第2天：四姑娘山 → 丹巴 → 八美 → 新都桥</h4>
+                        <p>行程：约200公里，经丹巴甲居藏寨和八美墨石公园到新都桥。</p>
+                        <p class="tip">深度：甲居藏寨是《中国国家地理》评选的最美乡村，值得停留2小时。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第4天：理塘 → 稻城 → 亚丁（全日游览）</h4>
-                        <p>行程：约150公里到稻城，第二天全日游览亚丁自然保护区。</p>
-                        <p class="tip">深度：亚丁建议住两天，充分体验“最后香格里拉”的自然之美。</p>
+                        <h4>第3天：新都桥 → 雅江 → 理塘</h4>
+                        <p>行程：约210公里，翻越高尔寺山、剪子弯山和卡子拉山，抵达理塘。</p>
+                        <p class="tip">过渡：理塘海拔4014米，参观长青春科尔寺，可品尝理塘酸奶。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第5天：亚丁 → 香格里拉镇 → 盐井</h4>
-                        <p>行程：约200公里，途经央迈隆山口和镇巴古猫桥，下午到盐井乡。</p>
-                        <p class="tip">文化：盐井乡保存有古老的盐井和红军长征纪念地。</p>
+                        <h4>第4-5天：理塘 → 稻城 → 亚丁（两天深度游）</h4>
+                        <p>行程：约150公里到稻城，次日全天游览亚丁。短线：冲古寺、珍珠海；长线：洛绒牛场、牛奶海、五色海。</p>
+                        <p class="tip">深度：亚丁建议住两晚，一天走短线一天走长线，充分感受"最后的香格里拉"。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第6天：盐井 → 芒康 → 左贡</h4>
-                        <p>行程：约180公里，途经京昆高原和丁青草原，下午到左贡县。</p>
-                        <p class="tip">准备：左贡后道路条件变好，但海拔仍在4000米以上。</p>
+                        <h4>第6天：稻城 → 理塘 → 巴塘</h4>
+                        <p>行程：约260公里，返回理塘后沿G318继续西行，经毛垭大草原到巴塘。</p>
+                        <p class="tip">景观：毛垭大草原夏季野花遍地，是理塘最美的季节景观。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第7天：左贡 → 邦达草原 → 然乌湖 → 波密</h4>
-                        <p>行程：约220公里，早上经左贡后穿越邦达草原，下午到然乌湖继续至波密。</p>
-                        <p class="tip">景观：然乌湖四周雪山环抱，是摄影爱好者的天堂。</p>
+                        <h4>第7天：巴塘 → 芒康 → 左贡</h4>
+                        <p>行程：约260公里，跨金沙江大桥正式入藏，翻越拉乌山和东达山（5130米）到左贡。</p>
+                        <p class="tip">注意：东达山垭口常年有风，气温可降至零度以下，备好防寒衣物。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第8天：波密 → 八一 → 林芝（林芝桃花沟）</h4>
-                        <p>行程：约140公里，早上游览林芝桃花沟（3-4月最佳），下午自由活动。</p>
-                        <p class="tip">体验：林芝除了桃花，还有雁鸣湖和雅鲁藏布江大峡谷观景点。</p>
+                        <h4>第8天：左贡 → 邦达 → 八宿</h4>
+                        <p>行程：约200公里，经邦达草原翻越业拉山（4658米），下怒江72拐到八宿。</p>
+                        <p class="tip">奇观：72拐观景台俯瞰全景最壮观，注意下山控制车速和刹车温度。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第9天：林芝 → 邦林 → 珠峰大本营方向（观景）</h4>
-                        <p>行程：约200公里，途经八一镇后前往珠峰大本营方向（可观海拔5200米观景点）。</p>
-                        <p class="tip">观看：若天气晴好，可远眺珠峰主峰（8848米），注意防晒和高原反应。</p>
+                        <h4>第9天：八宿 → 然乌湖 → 米堆冰川 → 波密</h4>
+                        <p>行程：约220公里，上午游览然乌湖和米堆冰川，下午到波密。</p>
+                        <p class="tip">景观：然乌湖四周雪山环抱，米堆冰川徒步往返约2小时，波密桃花沟3月最美。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第10天：珠峰方向 → 然乌湖 → 左贡</h4>
-                        <p>行程：约250公里，从珠峰方向返回然乌湖后经邦达草原到左贡。</p>
-                        <p class="tip">休息：建议在然乌湖或左贡住宿，缓解高原反应后继续。</p>
+                        <h4>第10天：波密深度游</h4>
+                        <p>休整日：上午游览波密桃花沟或岗云杉林，下午自由活动，体验当地藏家生活。</p>
+                        <p class="tip">体验：波密是"西藏小瑞士"，海拔仅2725米适合休整，可洗车补给。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第11天：左贡 → 芒康 → 康定</h4>
-                        <p>行程：约220公里，左贡后经芒康返回康定，途经澜沧江大峡谷。</p>
-                        <p class="tip">过渡：康定是重要的交通枢纽，可补充物资和维修车辆。</p>
+                        <h4>第11天：波密 → 鲁朗 → 林芝</h4>
+                        <p>行程：约230公里，穿通麦隧道过鲁朗林海，翻色季拉山远眺南迦巴瓦峰到林芝。</p>
+                        <p class="tip">美食：鲁朗石锅鸡是川藏线上最有名的美食，用当地石锅慢炖而成。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第12天：康定 → 马尔康 → 岷山风景区</h4>
-                        <p>行程：约260公里，途经泸定桥后经雅江 valley 向北至马尔康。</p>
-                        <p class="tip">文化：马尔康是藏羌聚集地，可体验羌族文化和藏传佛教寺庙。</p>
+                        <h4>第12天：林芝深度游（雅鲁藏布大峡谷）</h4>
+                        <p>全天游览：驱车前往雅鲁藏布大峡谷景区，近观南迦巴瓦峰和雅鲁藏布江。</p>
+                        <p class="tip">文化：大峡谷内有门巴族和珞巴族村落，可体验独特的峡谷文化。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第13天：马尔康 → 金川 → 小金县</h4>
-                        <p>行程：约180公里，途经甲居藏寨（返回）后经雅江北段到小金县。</p>
-                        <p class="tip">返程：此时已基本返回熟悉路线，可放慢速度欣赏返程景色。</p>
+                        <h4>第13天：林芝 → 巴松措 → 工布江达</h4>
+                        <p>行程：约150公里，上午游览巴松措（5A级景区），下午到工布江达县。</p>
+                        <p class="tip">文化：巴松措湖心岛有唐代红教寺庙，环湖步道约2小时。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第14天：小金县 → 四姑娘山 → 汶川</h4>
-                        <p>行程：约150公里，途经小金县后折返四姑娘山景区，下午至汶川。</p>
-                        <p class="tip">景观：返程再次欣赏四姑娘山，可选择不同角度或徒步路线。</p>
+                        <h4>第14天：工布江达 → 米拉山 → 墨竹工卡 → 拉萨</h4>
+                        <p>行程：约280公里，翻越米拉山（5013米）或穿米拉山隧道，经墨竹工卡到拉萨。</p>
+                        <p class="tip">过渡：米拉山是拉萨与林芝的分界线，过山后气候变干燥。</p>
                     </div>
                     <div class="route-day">
-                        <h4>第15天：汶川 → 成都（结束旅程）</h4>
-                        <p>行程：约160公里，途经汶川特殊教育学校纪念馆后返回成都。</p>
-                        <p class="tip": "结束：完整的川藏线南线自驾旅程结束，返程可选择高速或国道。</p>
+                        <h4>第15天：拉萨深度游（布达拉宫+大昭寺）</h4>
+                        <p>全天游览：上午参观布达拉宫（需提前预约），下午逛大昭寺和八廓街。</p>
+                        <p class="tip">结束：完整的川藏南线15天旅程，建议在拉萨停留2-3天充分感受圣城魅力。</p>
                     </div>
                 </div>
             `;
@@ -538,52 +538,84 @@ function initInteractiveMap() {
     // Define key G318 scenic spots with coordinates and info
     const scenicSpots = [
         {
-            name: "雅拉雪山",
-            lat: 29.8476,
-            lng: 90.1652,
-            description: "海拔7294米，终年雪山，是川藏线最著名的雪山景观之一。",
-            elevation: "7294米",
-            bestTime: "4-6月"
+            name: "贡嘎雪山",
+            lat: 29.7961,
+            lng: 101.7628,
+            description: "蜀山之王，海拔7556米，川藏线折多山垭口可远眺其主峰。",
+            elevation: "7556米",
+            bestTime: "10-次年5月"
+        },
+        {
+            name: "新都桥",
+            lat: 30.0446,
+            lng: 101.4838,
+            description: "摄影师的天堂，秋季白杨林金黄，光影变幻莫测。",
+            elevation: "3630米",
+            bestTime: "9-11月（秋季）"
+        },
+        {
+            name: "理塘",
+            lat: 30.0031,
+            lng: 100.2681,
+            description: "世界高城，仓央嘉措的故乡，长青春科尔寺值得参拜。",
+            elevation: "4014米",
+            bestTime: "6-9月"
+        },
+        {
+            name: "稻城亚丁",
+            lat: 28.4328,
+            lng: 100.2994,
+            description: "最后的香格里拉，仙乃日、央迈勇、夏诺多吉三座神山守护。",
+            elevation: "3900米",
+            bestTime: "9-11月"
+        },
+        {
+            name: "怒江72拐",
+            lat: 30.0733,
+            lng: 97.2918,
+            description: "海拔4658米的业拉山盘山公路，72个弯道层层叠叠，是川藏线最壮观路段。",
+            elevation: "4658米",
+            bestTime: "全年（注意天气）"
         },
         {
             name: "然乌湖",
-            lat: 29.3063,
-            lng: 95.9038,
-            description: "被誉为“人间仙湖”，湖水澄澈如镜，倒映着雪山和森林。",
+            lat: 29.4578,
+            lng: 96.9189,
+            description: "被誉为'人间仙湖'，湖水澄澈如镜，倒映着雪山和森林。",
             elevation: "3800米",
             bestTime: "5-10月"
         },
         {
-            name: "巴松措",
-            lat: 29.1632,
-            lng: 95.0887,
-            description: "“神湖”之美，湖光山色相映成趣，四季景色各异。春季杜鹃花开尤为壮观。",
-            elevation: "3538米",
-            bestTime: "3-5月（杜鹃花季）"
-        },
-        {
-            name: "72拐",
-            lat: 30.0074,
-            lng: 90.0574,
-            description: "海拔4000多米的蜿蜒山路，共有72个弯道，是川藏线上最具挑战的路段之一。",
-            elevation: "4000+米",
-            bestTime: "全年（注意天气）"
-        },
-        {
             name: "米堆冰川",
-            lat: 28.9552,
-            lng: 98.7933,
-            description: "中国最低海拔现代冰川，冰川下方有原始森林，形成独特的‘冰川森林’景观。",
+            lat: 29.3125,
+            lng: 96.5561,
+            description: "中国最低海拔现代冰川，冰川下方有原始森林，形成独特的'冰川森林'景观。",
             elevation: "2400米",
             bestTime: "10-次年4月"
         },
         {
             name: "鲁朗林海",
-            lat: 29.5653,
-            lng: 94.4411,
-            description: "被誉为‘江南的西藏’，森林覆盖率高，空气湿润，四季如春。",
+            lat: 29.7716,
+            lng: 95.0206,
+            description: "被誉为'东方瑞士'，森林覆盖率高，草甸花海，石锅鸡是必尝美食。",
             elevation: "3400米",
             bestTime: "3-10月"
+        },
+        {
+            name: "南迦巴瓦峰",
+            lat: 29.6300,
+            lng: 95.0550,
+            description: "中国最美雪山，海拔7782米，色季拉山口是最佳观景点，需运气才能一睹真容。",
+            elevation: "7782米",
+            bestTime: "10-次年4月（少雨季）"
+        },
+        {
+            name: "巴松措",
+            lat: 29.9542,
+            lng: 93.9983,
+            description: "'神湖'之美，湖光山色相映成趣，湖心岛有唐代红教寺庙。",
+            elevation: "3538米",
+            bestTime: "3-5月（杜鹃花季）"
         },
         {
             name: "拉萨布达拉宫",
@@ -601,10 +633,10 @@ function initInteractiveMap() {
         
         const popupContent = `
             <div class="map-popup">
-                <h4>${spot.name}</h4>
-                <p><strong>描述：</strong>${spot.description}</p>
-                <p><strong>海拔：</strong>${spot.elevation}</p>
-                <p><strong>最佳季节：</strong>${spot.bestTime}</p>
+                <h4>${escapeHtml(spot.name)}</h4>
+                <p><strong>描述：</strong>${escapeHtml(spot.description)}</p>
+                <p><strong>海拔：</strong>${escapeHtml(spot.elevation)}</p>
+                <p><strong>最佳季节：</strong>${escapeHtml(spot.bestTime)}</p>
             </div>
         `;
         
@@ -614,13 +646,34 @@ function initInteractiveMap() {
     // Add a polyline for the G318 route (simplified)
     const g318Route = [
         [30.5728, 104.0668], // 成都
-        [30.2734, 102.3211], // 泸定
-        [29.5771, 94.3589],  // 林芝
+        [30.0102, 103.0000], // 雅安
+        [29.8808, 102.2344], // 泸定
+        [30.0552, 101.9625], // 康定
+        [30.0446, 101.4838], // 新都桥
+        [29.9308, 101.0139], // 高尔寺山
+        [29.7331, 100.9714], // 雅江
+        [30.0031, 100.2681], // 理塘
+        [28.4328, 100.2994], // 稻城亚丁（支线）
+        [30.0031, 100.2681], // 返回理塘
+        [30.0781, 99.2886],  // 巴塘
+        [29.6806, 98.5983],  // 芒康
+        [29.7381, 97.8353],  // 左贡
+        [30.0733, 97.2918],  // 邦达/72拐
+        [29.6350, 96.9283],  // 八宿
+        [29.4578, 96.9189],  // 然乌湖
+        [29.3125, 96.5561],  // 米堆冰川
+        [29.8496, 95.5336],  // 波密
+        [29.7716, 95.0206],  // 鲁朗
+        [29.6300, 94.9200],  // 色季拉山
+        [29.6489, 94.3625],  // 林芝
+        [29.9542, 93.9983],  // 巴松措
+        [29.8853, 93.2450],  // 工布江达
+        [29.7756, 92.7211],  // 米拉山
         [29.6543, 91.1174],  // 拉萨
     ];
     
     L.polyline(g318Route, {color: '#ff385c', weight: 4, opacity: 0.8}).addTo(map)
-        .bindLink('<a href="#">查看详细路线</a>');
+        .bindPopup('<strong>G318川藏线</strong><br>点击查看详细路线信息');
     
     // Fit map to show all markers and route
     const allPoints = scenicSpots.map(spot => [spot.lat, spot.lng]).concat(g318Route);
@@ -814,7 +867,7 @@ function loadSampleReviews() {
 function submitReview() {
     // Get form values
     const reviewerName = document.getElementById('reviewer-name').value.trim();
-    const reviewType = document.getElementById('review-type').value;
+    const reviewType = document.getElementById('review-type-input').value;
     const reviewTitle = document.getElementById('review-title').value.trim();
     const ratingValue = document.getElementById('rating-value').value;
     const reviewContent = document.getElementById('review-content').value.trim();
@@ -823,6 +876,20 @@ function submitReview() {
     // Basic validation
     if (!reviewerName || !reviewType || !reviewTitle || !ratingValue || !reviewContent) {
         showNotification('请填写所有必填字段', 'error');
+        return;
+    }
+    
+    // Input length validation (defence in depth)
+    if (reviewerName.length > 20) {
+        showNotification('昵称不能超过20个字符', 'error');
+        return;
+    }
+    if (reviewTitle.length > 50) {
+        showNotification('标题不能超过50个字符', 'error');
+        return;
+    }
+    if (reviewContent.length > 1000) {
+        showNotification('内容不能超过1000个字符', 'error');
         return;
     }
     
@@ -865,6 +932,12 @@ function submitReview() {
     }
 }
 
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
 function createReviewCard(data) {
     // Create review card element
     const card = document.createElement('div');
@@ -875,23 +948,26 @@ function createReviewCard(data) {
     const tagsHtml = tagsArray.map(tag => {
         // Ensure tag starts with #
         const cleanTag = tag.startsWith('#') ? tag : '#' + tag;
-        return `<span class="tag">${cleanTag}</span>`;
+        return `<span class="tag">${escapeHtml(cleanTag)}</span>`;
     }).join('');
+    
+    // Validate rating is a safe integer 1-5
+    const safeRating = Math.max(1, Math.min(5, Math.floor(data.rating) || 0));
     
     card.innerHTML = `
         <div class="review-header">
             <div class="reviewer-info">
-                <div class="reviewer-avatar">${data.name.charAt(0)}</div>
-                <div class="reviewer-name">${data.name}</div>
-                <div class="review-date">${data.date}</div>
+                <div class="reviewer-avatar">${escapeHtml(data.name.charAt(0))}</div>
+                <div class="reviewer-name">${escapeHtml(data.name)}</div>
+                <div class="review-date">${escapeHtml(data.date)}</div>
             </div>
             <div class="review-rating">
-                ${'★'.repeat(data.rating)}${'☆'.repeat(5 - data.rating)}
+                ${'★'.repeat(safeRating)}${'☆'.repeat(5 - safeRating)}
             </div>
         </div>
         <div class="review-content">
-            <h4>${data.title}</h4>
-            <p>${data.content}</p>
+            <h4>${escapeHtml(data.title)}</h4>
+            <p>${escapeHtml(data.content)}</p>
         </div>
         <div class="review-tags">
             ${tagsHtml}

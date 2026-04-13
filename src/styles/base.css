@@ -17,7 +17,6 @@
 
 body {
     font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
     line-height: 1.7;
     background-color: var(--color-bg-light);
@@ -185,8 +184,8 @@ main {
     transform: translateY(-1px);
 }
 
-/* Photo gallery buttons */
-.btn-photo {
+/* Shared filter/toggle button styles (photo gallery + route planner) */
+.btn-photo, .btn-planner {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     border-radius: var(--radius-md);
@@ -201,20 +200,20 @@ main {
     color: var(--color-text-primary);
 }
 
-.btn-photo:hover {
+.btn-photo:hover, .btn-planner:hover {
     background: var(--color-accent);
     color: white;
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
-.btn-photo:active {
+.btn-photo:active, .btn-planner:active {
     background: #e6344f;
     color: white;
     transform: translateY(0);
 }
 
-.btn-photo.active {
+.btn-photo.active, .btn-planner.active {
     background: var(--color-accent);
     color: white;
     box-shadow: var(--shadow-lg);
@@ -646,6 +645,7 @@ footer p:last-child {
 .accommodation-list {
     display: grid;
     gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-top: 1.5rem;
 }
 
@@ -667,6 +667,7 @@ footer p:last-child {
 .culture-list {
     display: grid;
     gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-top: 1.5rem;
 }
 
@@ -687,36 +688,9 @@ footer p:last-child {
     margin: 2rem 0;
 }
 
+/* Route planner buttons — shared styles with .btn-photo above */
 .btn-planner {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius-md);
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 2px solid var(--color-disabled);
-    background: var(--color-bg-card);
-    color: var(--color-text-primary);
-    font-size: 0.95rem;
-}
-
-.btn-planner:hover {
-    background: var(--color-accent);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.btn-planner:active {
-    background: #e6344f;
-    color: white;
-    transform: translateY(0);
-}
-
-.btn-planner.active {
-    background: var(--color-accent);
-    color: white;
-    box-shadow: var(--shadow-lg);
+    margin: 0.25rem;
 }
 
 .route-content {
@@ -813,16 +787,4 @@ footer p:last-child {
     border-radius: 8px;
     margin-bottom: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.scenery-grid, .accommodation-list, .food-grid, .culture-list {
-    display: grid;
-    gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-    .scenery-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-    .accommodation-list { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-    .food-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
-    .culture-list { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
 }
