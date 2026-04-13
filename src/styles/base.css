@@ -679,6 +679,75 @@ footer p:last-child {
     --color-road-rgb: 16, 185, 129; /* #10b981 */
 }
 
+/* Route filter controls */
+.route-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.route-filters .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.route-filters .filter-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.route-filters select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: var(--radius-md);
+    background: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    min-width: 120px;
+}
+
+.route-filters select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(255, 56, 92, 0.15);
+}
+
+.feature-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.feature-tag {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 2rem;
+    background: white;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--color-text-secondary);
+}
+
+.feature-tag:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.feature-tag.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+}
+
 /* Styles for the route planner section */
 .planner-controls {
     display: flex;

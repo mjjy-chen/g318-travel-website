@@ -79,8 +79,11 @@ function initButtonInteractions() {
 function initRoutePlanner() {
     const plannerButtons = document.querySelectorAll('.btn-planner');
     const routeDisplay = document.querySelector('.route-display');
+    const difficultyFilter = document.getElementById('route-difficulty');
+    const featureTags = document.querySelectorAll('.feature-tag');
     
     if (plannerButtons.length > 0 && routeDisplay) {
+        // Route button click handlers
         plannerButtons.forEach(button => {
             button.addEventListener('click', function() {
                 // Remove active class from all buttons
@@ -103,11 +106,79 @@ function initRoutePlanner() {
             });
         });
         
+        // Difficulty filter handler
+        if (difficultyFilter) {
+            difficultyFilter.addEventListener('change', filterRoutes);
+        }
+        
+        // Feature tag click handlers (toggle)
+        featureTags.forEach(tag => {
+            tag.addEventListener('click', function() {
+                this.classList.toggle('active');
+                filterRoutes();
+            });
+        });
+        
         // Set first button as active by default
         if (plannerButtons[0]) {
             plannerButtons[0].classList.add('active');
             updateRouteDisplay('8', routeDisplay);
         }
+    }
+}
+
+function filterRoutes() {
+    const plannerButtons = document.querySelectorAll('.btn-planner');
+    const routeDisplay = document.querySelector('.route-display');
+    const difficultyFilter = document.getElementById('route-difficulty');
+    const activeFeatureTags = document.querySelectorAll('.feature-tag.active');
+    
+    if (!plannerButtons.length || !routeDisplay) return;
+    
+    // Get current filter values
+    const selectedDifficulty = difficultyFilter ? difficultyFilter.value : 'all';
+    const selectedFeatures = Array.from(activeFeatureTags).map(tag => tag.getAttribute('data-feature'));
+    
+    // Track if any button is currently active and visible
+    let activeButtonVisible = false;
+    let firstVisibleButton = null;
+    
+    plannerButtons.forEach(button => {
+        const btnDifficulty = button.getAttribute('data-difficulty') || '';
+        const btnFeatures = (button.getAttribute('data-features') || '').split(' ').filter(f => f);
+        
+        // Check difficulty match
+        const difficultyMatch = selectedDifficulty === 'all' || btnDifficulty === selectedDifficulty;
+        
+        // Check feature match (all selected features must be in the route)
+        const featureMatch = selectedFeatures.length === 0 || 
+            selectedFeatures.every(feat => btnFeatures.includes(feat));
+        
+        const visible = difficultyMatch && featureMatch;
+        button.style.display = visible ? '' : 'none';
+        
+        if (visible) {
+            if (!firstVisibleButton) firstVisibleButton = button;
+            if (button.classList.contains('active')) activeButtonVisible = true;
+        }
+    });
+    
+    // If current active button is hidden, switch to first visible one
+    if (!activeButtonVisible && firstVisibleButton) {
+        plannerButtons.forEach(btn => btn.classList.remove('active'));
+        firstVisibleButton.classList.add('active');
+        const days = firstVisibleButton.getAttribute('data-days');
+        updateRouteDisplay(days, routeDisplay);
+    }
+    
+    // If no routes match, show a message
+    if (!firstVisibleButton) {
+        routeDisplay.innerHTML = `
+            <div class="route-content">
+                <h3>暂无匹配路线</h3>
+                <p>当前筛选条件下没有匹配的路线，请尝试调整筛选条件。</p>
+            </div>
+        `;
     }
 }
 
@@ -835,9 +906,8 @@ function filterReviews() {
     // Filter by type
     const filteredCards = reviewCards.filter(card => {
         if (typeFilter === 'all') return true;
-        // In a real implementation, we'd check data attributes on the card
-        // For now, we'll show all since we're using sample data
-        return true;
+        const cardType = card.getAttribute('data-type') || '';
+        return cardType === typeFilter;
     });
     
     // Sort reviews
@@ -845,17 +915,17 @@ function filterReviews() {
         if (sortFilter === 'newest') return -1; // Keep original order (newest first in our sample)
         if (sortFilter === 'oldest') return 1;  // Reverse order
         if (sortFilter === 'rating') {
-            // Extract rating from card (simplified)
-            const ratingA = a.querySelector('.review-rating').textContent.length;
-            const ratingB = b.querySelector('.review-rating').textContent.length;
+            // Count filled stars (★) for more accurate rating comparison
+            const ratingA = (a.querySelector('.review-rating').textContent.match(/★/g) || []).length;
+            const ratingB = (b.querySelector('.review-rating').textContent.match(/★/g) || []).length;
             return ratingB - ratingA;
         }
         return 0;
     });
     
-    // Clear and re-add filtered/sorted cards
-    reviewsContainer.innerHTML = '';
-    sortedCards.forEach(card => reviewsContainer.appendChild(card));
+    // Hide all cards first, then show filtered ones
+    reviewCards.forEach(card => card.style.display = 'none');
+    sortedCards.forEach(card => card.style.display = '');
 }
 
 function loadSampleReviews() {
@@ -942,6 +1012,7 @@ function createReviewCard(data) {
     // Create review card element
     const card = document.createElement('div');
     card.className = 'review-card';
+    card.setAttribute('data-type', data.type || 'other');
     
     // Format tags
     const tagsArray = data.tags ? data.tags.split(' ').filter(tag => tag.trim() !== '') : [];

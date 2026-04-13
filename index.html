@@ -34,6 +34,7 @@
     <meta http-equiv="Expires" content="Thu, 31 Dec 2037 23:55:55 GMT">
 
     <title>318进藏自驾游</title>
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/styles/base.css">
     <link rel="stylesheet" href="src/styles/variables.css">
@@ -238,7 +239,7 @@
                 <!-- Reviews Container -->
                 <div id="reviews-container" class="reviews-grid">
                     <!-- Sample reviews will be loaded here by JavaScript -->
-                    <div class="review-card">
+                    <div class="review-card" data-type="scenery">
                         <div class="review-header">
                             <div class="reviewer-info">
                                 <div class="reviewer-avatar">旅</div>
@@ -260,7 +261,7 @@
                         </div>
                     </div>
                     
-                    <div class="review-card">
+                    <div class="review-card" data-type="accommodation">
                         <div class="review-header">
                             <div class="reviewer-info">
                                 <div class="reviewer-avatar">李</div>
@@ -282,7 +283,7 @@
                         </div>
                     </div>
                     
-                    <div class="review-card">
+                    <div class="review-card" data-type="food">
                         <div class="review-header">
                             <div class="reviewer-info">
                                 <div class="reviewer-avatar">王</div>
@@ -374,10 +375,30 @@
                 <h2 class="section-title">行程规划</h2>
                 <p class="section-description">根据您的时间选择合适的行程方案，我们提供经典8天、深度10天和全程15天三种路线规划。</p>
                 
+                <div class="route-filters">
+                    <div class="filter-group">
+                        <label for="route-difficulty">难度筛选：</label>
+                        <select id="route-difficulty">
+                            <option value="all">全部难度</option>
+                            <option value="beginner">入门级</option>
+                            <option value="moderate">进阶级</option>
+                            <option value="challenge">挑战级</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>路线特色：</label>
+                        <div class="feature-tags">
+                            <button class="feature-tag" data-feature="yading">🏔️ 稻城亚丁</button>
+                            <button class="feature-tag" data-feature="siguniang">⛰️ 四姑娘山</button>
+                            <button class="feature-tag" data-feature="canyon">🏞️ 雅鲁藏布大峡谷</button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="planner-controls">
-                    <button class="btn-planner" data-days="8">8天经典路线</button>
-                    <button class="btn-planner" data-days="10">10天深度路线</button>
-                    <button class="btn-planner" data-days="15">15天全程路线</button>
+                    <button class="btn-planner" data-days="8" data-difficulty="beginner" data-features="">8天经典路线</button>
+                    <button class="btn-planner" data-days="10" data-difficulty="moderate" data-features="yading">10天深度路线</button>
+                    <button class="btn-planner" data-days="15" data-difficulty="challenge" data-features="yading siguniang canyon">15天全程路线</button>
                 </div>
                 
                 <div class="route-display">
