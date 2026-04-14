@@ -908,3 +908,16 @@ footer p:last-child {
         opacity: 0;
     }
 }
+
+/* Star rating styles (replaces JS inline styles) */
+.star-filled {
+    color: #ff385c;
+}
+
+.star-preview {
+    color: #ffed4a;
+}
+
+.star-empty {
+    color: #f0f0f0;
+}
