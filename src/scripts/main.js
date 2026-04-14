@@ -33,6 +33,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize comment/review system
     initCommentSystem();
+
+    // Service Worker Registration
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+                .then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                })
+                .catch(error => {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+        });
+    }
 });
 
 function initButtonInteractions() {
@@ -1047,18 +1060,6 @@ function createReviewCard(data) {
     
     return card;
 }
-    // Service Worker Registration
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-          .then(registration => {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-          })
-          .catch(error => {
-            console.log('ServiceWorker registration failed: ', error);
-          });
-      });
-    }
 
 
 // Notification system
@@ -1072,76 +1073,14 @@ function showNotification(message, type = 'info') {
     notification.className = `notification notification-${type}`;
     notification.textContent = message;
     
-    // Style the notification
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 12px 20px;
-        border-radius: 6px;
-        font-size: 0.95rem;
-        font-weight: 500;
-        z-index: 1000;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        animation: slideIn 0.3s ease-out;
-        min-width: 250px;
-        text-align: center;
-    `;
-    
-    // Set colors based on type
-    if (type === 'success') {
-        notification.style.backgroundColor = '#dcfce7';
-        notification.style.color = '#166534';
-        notification.style.border = '1px solid #bbf7d0';
-    } else if (type === 'error') {
-        notification.style.backgroundColor = '#fee2e2';
-        notification.style.color = '#991b1b';
-        notification.style.border = '1px solid #fecaca';
-    } else { // info
-        notification.style.backgroundColor = '#dbeafe';
-        notification.style.color = '#1e40af';
-        notification.style.border = '1px solid #bfdbfe';
-    }
-    
     // Add to document
     document.body.appendChild(notification);
     
     // Remove after 3 seconds
     setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease-in';
+        notification.classList.add('notification-slide-out');
         setTimeout(() => {
             notification.remove();
         }, 300);
     }, 3000);
 }
-
-// Add animation styles for notifications
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideIn {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-    
-    @keyframes slideOut {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-    }
-    
-    .notification {
-        transition: all 0.3s ease;
-    }
-`;
-document.head.appendChild(style);

@@ -2,6 +2,7 @@
 :root {
     --color-bg-primary: #ffffff;
     --color-text-primary: #222222;
+    --color-primary: #ff385c; /* Rausch Red — primary action color */
     --color-accent: #ff385c; /* Rausch Red */
     --color-text-secondary: #6a6a6a;
     --color-disabled: rgba(0,0,0,0.24);
@@ -12,6 +13,11 @@
     --color-road: #10b981; /* Emerald for roads */
     --color-bg-light: #f8fafc;
     --color-bg-card: #ffffff;
+    /* RGB variants for rgba() usage */
+    --color-mountain-rgb: 139, 92, 246; /* #8b5cf6 */
+    --color-lake-rgb: 6, 182, 212; /* #06b6d4 */
+    --color-culture-rgb: 249, 115, 22; /* #f97316 */
+    --color-road-rgb: 16, 185, 129; /* #10b981 */
     /* Shadow styles */
     --shadow-sm: rgba(0,0,0,0.05) 0px 1px 2px 0px;
     --shadow-md: rgba(0,0,0,0.08) 0px 4px 6px -1px, rgba(0,0,0,0.06) 0px 2px 4px -1px;
