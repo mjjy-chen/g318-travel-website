@@ -268,10 +268,19 @@ document.addEventListener('DOMContentLoaded', async function() {
             maxZoom: 18,
         }).addTo(map);
 
+        // Custom marker icon (no external image dependency)
+        const markerIcon = L.divIcon({
+            className: 'g318-marker',
+            html: '<div class="marker-dot"></div>',
+            iconSize: [20, 20],
+            iconAnchor: [10, 10],
+            popupAnchor: [0, -12],
+        });
+
         if (mapData) {
             // Add markers for each scenic spot
             mapData.spots.forEach(spot => {
-                const marker = L.marker([spot.lat, spot.lng]).addTo(map);
+                const marker = L.marker([spot.lat, spot.lng], {icon: markerIcon}).addTo(map);
                 const popupContent = `
                     <div class="map-popup">
                         <h4>${escapeHtml(spot.name)}</h4>

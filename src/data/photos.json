@@ -6,35 +6,35 @@
     "imgClass": "scenery-img",
     "items": [
       {
-        "img": "public/images/scenery/yalasnow.webp",
+        "img": "https://images.unsplash.com/photo-1585409677983-0f6c41ca4c59?w=800&h=600&fit=crop",
         "alt": "雅拉雪山",
         "title": "雅拉雪山",
         "desc": "海拔7294米，终年雪山，是川藏线最著名的雪山景观之一。最佳观赏时间：4-6月，上午时分云雾较少。",
         "tip": "小贴士：可在察瓦龙镇观景台俯瞰全貌，注意防晒和保暖。"
       },
       {
-        "img": "public/images/scenery/ranwu.webp",
+        "img": "https://images.unsplash.com/photo-1589308078059-be1415e93c56?w=800&h=600&fit=crop",
         "alt": "然乌湖",
         "title": "然乌湖",
         "desc": "被誉为\"人间仙湖\"，湖水澄澈如镜，倒映着雪山和森林。最佳旅游季节：5-10月。",
         "tip": "小贴士：湖边有藏民家访体验，可尝试奶酪和青稞酒。"
       },
       {
-        "img": "public/images/scenery/basumtso.webp",
+        "img": "https://images.unsplash.com/photo-1622797516242-0aded528558f?w=800&h=600&fit=crop",
         "alt": "巴松措",
         "title": "巴松措",
         "desc": "\"神湖\"之美，湖光山色相映成趣，四季景色各异。春季杜鹃花开尤为壮观。",
         "tip": "小贴士：环湖步行约2小时，沿途有多个观景点可拍摄倒影。"
       },
       {
-        "img": "public/images/scenery/72hairpin.webp",
+        "img": "https://images.unsplash.com/photo-1604225300930-4a27e1f5443e?w=800&h=600&fit=crop",
         "alt": "72拐",
         "title": "72拐",
         "desc": "海拔4000多米的蜿蜒山路，共有72个弯道，是川藏线上最具挑战的路段之一。",
         "tip": "小贴士：上坡时使用低挡，下坡时靠边行驶，注意迎车。"
       },
       {
-        "img": "public/images/scenery/midui.webp",
+        "img": "https://images.unsplash.com/photo-1548266495-5816b7749c72?w=800&h=600&fit=crop",
         "alt": "米堆冰川",
         "title": "米堆冰川",
         "desc": "中国最低海拔现代冰川，冰川下方有原始森林，形成独特的\"冰川森林\"景观。",
@@ -49,7 +49,7 @@
     "imgClass": "accommodation-img",
     "items": [
       {
-        "img": "public/images/accommodation/hilton.webp",
+        "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
         "alt": "林芝希尔顿逸林酒店",
         "title": "林芝希尔顿逸林酒店",
         "desc": "⭐⭐⭐⭐⭐ | 林芝市区 | 约¥400-600/晚",
@@ -57,7 +57,7 @@
         "tip": "适合：首次进藏需要缓冲的游客"
       },
       {
-        "img": "public/images/accommodation/gesar.webp",
+        "img": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800&h=600&fit=crop",
         "alt": "波密古乡格萨尔王庄园",
         "title": "波密古乡格萨尔王庄园",
         "desc": "⭐⭐⭐⭐ | 波密县 | 约¥250-350/晚",
@@ -65,18 +65,24 @@
         "tip": "适合：想体验藏传民宿文化的旅行者"
       },
       {
+        "img": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba4?w=800&h=600&fit=crop",
+        "alt": "昌都香巴拉宾馆",
         "title": "昌都香巴拉宾馆",
         "desc": "⭐⭐⭐ | 昌都县 | 约¥150-250/晚",
         "detail": "条件基本但干净整洁，老板热情提供旅行建议和当地信息。",
         "tip": "适合：预算有限的背包客和自驾车友"
       },
       {
+        "img": "https://images.unsplash.com/photo-1520250467810-66b6d4e6d408?w=800&h=600&fit=crop",
+        "alt": "左贡客栈·旺姆家访",
         "title": "左贡客栈·旺姆家访",
         "desc": "⭐⭐⭐⭐ | 左贡县 | 约¥180-280/晚（含早晚餐）",
         "detail": "藏式木结构房屋，可参加家庭烤火和酥油茶制作。",
         "tip": "适合：想深度体验藏家生活的文化爱好者"
       },
       {
+        "img": "https://images.unsplash.com/photo-1445019980597-93fa8acb2460?w=800&h=600&fit=crop",
+        "alt": "邦达草原旅社",
         "title": "邦达草原旅社",
         "desc": "⭐⭐⭐ | 邦达草原 | 约¥120-200/晚",
         "detail": "草原上的简易旅社，夜晚可观星，清晨看草原牛羊。",
@@ -91,35 +97,43 @@
     "imgClass": "food-img",
     "items": [
       {
-        "img": "public/images/food/buttertea.webp",
+        "img": "https://images.unsplash.com/photo-1578899544060-9b487cc8b9ff?w=800&h=600&fit=crop",
         "alt": "酥油茶",
         "title": "酥油茶",
         "desc": "藏家日常饮品，由茶、酥油和盐搅拌而成，高热量易于耐寒。",
         "tip": "品尝建议：刚端上来时热饮，不要一次喝太多以免不适。"
       },
       {
+        "img": "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800&h=600&fit=crop",
+        "alt": "青稞酒",
         "title": "青稞酒",
         "desc": "高原特色酒精饮料，度数较低（20%-30%），味道甘甜略带酸味。",
         "tip": "饮用注意：高原地区酒精易上头，控制量并多喝水。"
       },
       {
+        "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&h=600&fit=crop",
+        "alt": "藏式羊肉火锅",
         "title": "藏式羊肉火锅",
         "desc": "清汤底煮羊肉片，配以藏式蘸料（香菜、蒜泥、辣椒油等）。",
         "tip": "最佳餐馆：林芝的\"桃花庄园\"、波密的\"八一食堂\"。"
       },
       {
-        "img": "public/images/food/stonechicken.webp",
+        "img": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&h=600&fit=crop",
         "alt": "石锅鸡",
         "title": "石锅鸡（巴松措特色）",
         "desc": "用当地石锅慢炖的鸡肉汤，加入木耳、香菇和青稞。",
         "tip": "必须尝试：巴松措湖边的石锅鸡馆，鱼汤同样值得一试。"
       },
       {
+        "img": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=800&h=600&fit=crop",
+        "alt": "雅江鱼",
         "title": "雅江鱼",
         "desc": "雅江河谷特产，肉质鲜嫩，多以清蒸或红烧方式烹饪。",
         "tip": "季节性强：4-6月为最佳时期，之后可能因禁渔而难以买到。"
       },
       {
+        "img": "https://images.unsplash.com/photo-1608039829572-9b1234ef1321?w=800&h=600&fit=crop",
+        "alt": "高原牦牛肉干",
         "title": "高原牦牛肉干",
         "desc": "风干牦牛肉，嚼劲十足，是途中补给的好选择。",
         "tip": "选购建议：颜色深红不发黑，闻起来有肉香无异味。"
@@ -133,30 +147,36 @@
     "imgClass": "culture-img",
     "items": [
       {
-        "img": "public/images/culture/temple.webp",
+        "img": "https://images.unsplash.com/photo-1585409677983-0f6c41ca4c59?w=800&h=600&fit=crop",
         "alt": "藏传佛教寺庙",
         "title": "藏传佛教寺庙",
         "desc": "沿途可见诸多寺庙，如波密的嘎托寺、昌都的觉东寺等。",
         "tip": "参观礼仪：逆时针转经轮、不要触摸佛像、保持安静。"
       },
       {
+        "img": "https://images.unsplash.com/photo-1590071089642-5a03ed3c9191?w=800&h=600&fit=crop",
+        "alt": "雪顿节",
         "title": "雪顿节（若遇同年份）",
         "desc": "藏历六月二十九日开始的节日，以晒佛像和吃酸奶为主要内容。",
         "tip": "时间参考：通常在公历6-7月之间，具体日期需查看当年中藏历。"
       },
       {
+        "img": "https://images.unsplash.com/photo-1590071089642-5a03ed3c9191?w=800&h=600&fit=crop",
+        "alt": "藏式婚礼习俗",
         "title": "藏式婚礼习俗",
         "desc": "若遇婚礼迎亲队伍，会看到新娘戴着凤冠霞帔，骑着装饰的马。",
         "tip": "尊重观看：保持距离不要围观太近，可拍远景但不建议近距离拍摄新娘。"
       },
       {
-        "img": "public/images/culture/butterflower.webp",
+        "img": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
         "alt": "酥油花制作",
         "title": "酥油花制作",
         "desc": "冬季藏民用酥油和矿物质颜料塑造成各种佛像和花卉。",
         "tip": "欣赏地点：部分寺庙冬季会展酥油花，夏季较少可见。"
       },
       {
+        "img": "https://images.unsplash.com/photo-1504600770771-fb03a7f24cb3?w=800&h=600&fit=crop",
+        "alt": "藏族歌舞表演",
         "title": "藏族歌舞表演",
         "desc": "许多餐厅和文化园会有晚间的藏族歌舞表演。",
         "tip": "体验建议：林芝和波密的一些客栈提供晚餐加表演套餐。"
